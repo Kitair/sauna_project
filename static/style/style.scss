@@ -1,0 +1,498 @@
+$carousel-control-color: black;
+$carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+$font-size-xxl: 72px;
+$font-size-xl: 48px;
+$font-size-l: 36px;
+$font-size-m: 24px;
+$default-size: 18px;
+$header-text-color: white;
+$btn-color: white;
+$btn-background: #F59F39;
+$btn-background-hover: #DF7901;
+$btn-border-radius: 90px;
+$slide-text-color: white;
+$title-margin: 50px auto;
+$section-margin: 100px auto;
+$link-color: white;
+
+%nav-link-style {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: $link-color;
+  transition: font-size .3s;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+%footer-column-title-style {
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border: 1px solid white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+%btn-style {
+  margin: auto;
+  color: $btn-color;
+  background: $btn-background;
+  border: none;
+  border-radius: $btn-border-radius;
+  transition: background-color .3s;
+
+  &:hover {
+    background: $btn-background-hover;
+    cursor: pointer;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: $default-size;
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+  font-weight: 700;
+  font-family: 'Caveat', cursive;
+}
+
+h2 {
+  font-size: $font-size-xl;
+  font-family: 'Caveat', cursive;
+}
+
+h3 {
+  font-size: $font-size-l;
+}
+
+h4 {
+  font-size: $font-size-m;
+}
+
+.container-xxl {
+  width: 1400px;
+  margin: auto;
+}
+
+// ----------------------Header styles---------------------------
+header.header {
+  height: 100px;
+  width: 100%;
+  background-image: url("../img/header/header-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr 2fr 2fr;
+    height: 100%;
+
+    .logo {
+      margin: auto;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    nav.menu {
+      display: grid;
+      grid-template-columns: 2fr 3fr 2fr 2fr;
+
+      a.link-item {
+        @extend %nav-link-style;
+
+        &:hover {
+          font-size: 24px;
+        }
+      }
+    }
+
+    button.btn-callback {
+      @extend %btn-style;
+      padding: 12px;
+      font-size: 18px;
+    }
+
+    a.phone {
+      margin: auto;
+      text-decoration: none;
+      color: $header-text-color;
+    }
+
+    .schedule {
+      margin: auto;
+
+      p {
+        color: $header-text-color;
+        padding: 3px 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
+// ----------------------Visit-Slider styles---------------------------
+
+.visit-slider {
+  .carousel-inner {
+    .carousel-item {
+      img.background-img.d-block.w-100 {
+        height: 1000px;
+      }
+
+      .carousel-caption.d-none.d-md-block {
+        width: 800px;
+        margin: 0 auto 18% auto;
+
+        h1.slider-title {
+          line-height: 90px;
+          color: $slide-text-color;
+        }
+
+        h4.slider-subtitle {
+          color: $slide-text-color;
+          margin-bottom: 45px;
+        }
+
+        button.btn-slider {
+          @extend %btn-style;
+          padding: 15px 85px;
+          position: relative;
+
+          img.btn-icon {
+            position: absolute;
+            top: -4.6rem;
+            right: -4.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    button.indicator_custom.active {
+      text-align: center !important;
+      width: 35px !important;
+      height: 35px !important;
+      opacity: .5 !important;
+      margin: auto 3px;
+    }
+
+    button.indicator_custom {
+      box-sizing: inherit !important;
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 50%;
+      background: white !important;
+      opacity: 1 !important;
+      margin: auto 3px;
+    }
+  }
+
+  button.carousel-control-prev,
+  button.carousel-control-next {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    top: 70%;
+    text-align: center;
+  }
+
+  button.carousel-control-prev {
+    left: 5%;
+  }
+
+  button.carousel-control-next {
+    right: 5%;
+  }
+}
+
+// --------------------------About--------------------------------
+
+.about {
+  margin: $section-margin;
+
+  h2.title {
+    margin: $title-margin;
+    text-align: center;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .column {
+      img.icon {
+        display: block;
+        margin: auto;
+        width: 135px;
+        height: 135px;
+      }
+
+      p.text {
+        text-align: center;
+        margin: 15px 0;
+      }
+    }
+  }
+}
+
+// --------------------------Offers--------------------------------
+
+.offers {
+  margin: $section-margin;
+
+  h2.title {
+    margin: $title-margin;
+    text-align: center;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    margin: auto 50px;
+
+    .card {
+      padding: 3rem;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+      img.card-img {
+
+      }
+
+      h4.card-title {
+        margin: 30px auto;
+      }
+
+      p.card-text {
+      }
+
+      h3.card-price {
+        margin: 40px auto;
+      }
+
+      button.card-button {
+        @extend %btn-style;
+        padding: 15px 55px;
+      }
+    }
+  }
+}
+
+// --------------------------Discounts----------------------------
+
+.discounts {
+  margin: $section-margin;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/discount/discount-background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 550px;
+
+  .caption {
+    padding-top: 160px;
+
+    h2.caption-title {
+      color: white;
+      text-align: center;
+      letter-spacing: 0.25em;
+      font-family: Montserrat, sans-serif;
+    }
+
+    h3.caption-subtitle {
+      color: #DF7901;
+      text-align: center;
+    }
+
+    p.caption-discount {
+      font-size: 48px;
+      text-align: center;
+      color: white;
+    }
+
+    button.caption-button {
+      @extend %btn-style;
+      display: block;
+      padding: 15px 70px;
+    }
+  }
+}
+
+// --------------------------Reviews-Slider----------------------------
+
+.reviews-slider.container-xxl {
+  margin: $section-margin;
+
+  h2.title {
+    margin: $title-margin;
+    text-align: center;
+  }
+
+  #carouselExampleControls.carousel.slide {
+    margin: 60px auto;
+
+    .carousel-inner {
+      .carousel-item {
+        .card {
+          display: grid;
+          grid-template-columns: 3fr 7fr;
+          position: relative;
+          padding: 15px;
+          height: 200px;
+
+          h4.username {
+            margin: auto;
+          }
+
+          p.user-feedback {
+            margin: auto;
+
+            &:before {
+              content: '';
+              position: absolute;
+              bottom: 25px;
+              left: 27%;
+              height: 150px;
+              border: 1px solid lightcoral;
+              opacity: .7;
+            }
+          }
+        }
+      }
+    }
+
+    button.carousel-control-prev,
+    button.carousel-control-next {
+      top: -250px;
+    }
+
+    button.carousel-control-prev {
+      left: 1000px;
+
+      span.carousel-control-prev-icon {
+        background: $carousel-control-prev-icon-bg;
+      }
+    }
+
+    button.carousel-control-next {
+      right: -75px;
+
+      span.carousel-control-next-icon {
+        background: $carousel-control-next-icon-bg;
+      }
+    }
+  }
+
+  button.reviews-button {
+    @extend %btn-style;
+    font-size: 14px;
+    padding: 12px 30px;
+    display: block;
+  }
+}
+
+// -----------------------------Footer-----------------------------
+
+footer.footer {
+  background-image: url("../img/footer/footer-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 250px;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+
+    .logo {
+      margin: auto;
+
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    nav.menu {
+      margin: auto 0 auto 4rem;
+
+      a.link-item {
+        @extend %nav-link-style;
+        font-size: 14px;
+        padding: 2px 0;
+
+        &:hover {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .payment {
+      margin: 2rem auto 0 auto;
+      width: 60%;
+
+      p.payment-title {
+        @extend %footer-column-title-style
+      }
+
+      .payment-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        i.fab.fa-cc-visa,
+        i.fab.fa-cc-mastercard {
+          color: white;
+          font-size: 70px;
+          text-align: center;
+        }
+      }
+    }
+
+    .contacts {
+      margin: 2rem auto 0 auto;
+
+      p.contact-title {
+        @extend %footer-column-title-style
+      }
+
+      a.contact-item {
+        @extend %nav-link-style
+      }
+    }
+  }
+
+  p.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+
+    i.far.fa-copyright {
+      color: white;
+    }
+  }
+}
+

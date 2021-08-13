@@ -1,0 +1,93 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Банька</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href={% static "style/style.css" %}>
+</head>
+<body>
+<header class="header">
+    <div class="wrapper">
+        <div class="logo">
+            <img src={% static "img/logo.png" %} alt="logo"/>
+        </div>
+        <nav class="menu">
+            <a class='link-item' href="">Главная</a>
+            <a class='link-item' href="">Сауна и чаны</a>
+            <a class='link-item' href="">Услуги</a>
+            <a class='link-item' href="">Контакты</a>
+        </nav>
+        <button class="btn-callback">Перезвоните мне</button>
+        <a class="phone" href="tel:+38(093)-000-00-00">+38(093)-000-00-00</a>
+        <div class="schedule">
+            <p>9:00-12:00</p>
+            <p>Пн-Вс</p>
+        </div>
+    </div>
+</header>
+<!-------------------------------LANDING PAGE-------------------------------------->
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="./img/logo.png" alt="logo"/>
+        </div>
+        <nav class="menu">
+            <a class='link-item' href="">Главная</a>
+            <a class='link-item' href="">Сауна и чаны</a>
+            <a class='link-item' href="">Услуги</a>
+            <a class='link-item' href="">Контакты</a>
+        </nav>
+        <div class="payment">
+            <p class="payment-title">Способы оплаты</p>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+            </div>
+
+        </div>
+        <div class="contacts">
+            <p class="contact-title">Контакты</p>
+            <a href="https://www.google.com.ua/maps/place/%D1%83%D0%BB.+%D0%A7%D0%B5%D0%BB%D1%8E%D1%81%D0%BA%D0%B8%D0%BD%D1%86%D0%B5%D0%B2,+31,+%D0%A4%D0%B0%D1%81%D1%82%D0%BE%D0%B2,+%D0%9A%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+08500/@50.0633097,29.8937143,18z/data=!3m1!4b1!4m9!1m2!2m1!1z0LMuINCk0LDRgdGC0L7Qsiwg0KfQtdC70Y7RgdC60LjQvdGG0LXQsiwgMzE!3m5!1s0x40d354eed32c9db1:0xdbdd049f44bca2ec!8m2!3d50.063308!4d29.8948086!15sCizQsy4g0KTQsNGB0YLQvtCyLCDQp9C10LvRjtGB0LrQuNC90YbQtdCyLCAzMZIBEWNvbXBvdW5kX2J1aWxkaW5n?hl=ru"
+               class="contact-item">г. Фастов, Челюскинцев, 31</a>
+            <a href="tel:+38(093)-000-00-00" class="contact-item">+38(093)-000-00-00</a>
+            <a href="tel:+38(093)-000-00-00" class="contact-item">+38(093)-000-00-00</a>
+            <a href="tel:+38(093)-000-00-00" class="contact-item">+38(093)-000-00-00</a>
+        </div>
+    </div>
+    <p class="copyright"><i class="far fa-copyright"></i> Все права защищены, 2021</p>
+</footer>
+<section class="appointment-calendar">
+        <div class="appointment-wrapper">
+            <h2 class="title">
+
+            </h2>
+            <div class="appointment-button">
+                <button class="booking">Забронировать сауну</button>
+                <button class="booking">Забронировать чан</button>
+            </div>
+            <form>
+                <p>Выберите дату: <input type="date" name="calendar">
+                    <input type="submit" value="Отправить"></p>
+            </form>
+        </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a8a9bc84b3.js" crossorigin="anonymous"></script>
+</body>
+</html>

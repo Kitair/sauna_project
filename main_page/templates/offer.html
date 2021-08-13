@@ -1,0 +1,22 @@
+<div class="offers">
+        <h2 class="title">Найдите что Вам по душе</h2>
+        <div class="row">
+            {% for item in offer %}
+            <div class="card">
+                <img class='card-img' src="{{ item.photo.url }}" alt="{{ item.title }}"/>
+                <h4 class="card-title">
+                    {{ item.title }}
+                </h4>
+                <p class="card-text">
+                    {{ item.desc }}
+                </p>
+                <h3 class="card-price">
+                    {{ item.price }}
+                </h3>
+                <button class="card-button">
+                    Забронировать
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>

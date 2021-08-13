@@ -1,0 +1,364 @@
+footer.footer .wrapper .contacts a.contact-item, footer.footer .wrapper nav.menu a.link-item, header.header .wrapper nav.menu a.link-item {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
+}
+footer.footer .wrapper .contacts a.contact-item:hover, footer.footer .wrapper nav.menu a.link-item:hover, header.header .wrapper nav.menu a.link-item:hover {
+  color: white;
+  text-decoration: none;
+}
+
+footer.footer .wrapper .contacts p.contact-title, footer.footer .wrapper .payment p.payment-title {
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+}
+footer.footer .wrapper .contacts p.contact-title:before, footer.footer .wrapper .payment p.payment-title:before {
+  content: "";
+  position: absolute;
+  border: 1px solid white;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.reviews-slider.container-xxl button.reviews-button, .discounts .caption button.caption-button, .offers .row .card button.card-button, .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider, header.header .wrapper button.btn-callback {
+  margin: auto;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+.reviews-slider.container-xxl button.reviews-button:hover, .discounts .caption button.caption-button:hover, .offers .row .card button.card-button:hover, .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider:hover, header.header .wrapper button.btn-callback:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 700;
+  font-family: "Caveat", cursive;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: "Caveat", cursive;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+.container-xxl {
+  width: 1400px;
+  margin: auto;
+}
+
+header.header {
+  height: 100px;
+  width: 100%;
+  background-image: url("../img/header/header-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+header.header .wrapper {
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr 2fr 2fr;
+  height: 100%;
+}
+header.header .wrapper .logo {
+  margin: auto;
+}
+header.header .wrapper .logo img {
+  width: 80px;
+  height: 80px;
+}
+header.header .wrapper nav.menu {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 2fr;
+}
+header.header .wrapper nav.menu a.link-item:hover {
+  font-size: 24px;
+}
+header.header .wrapper button.btn-callback {
+  padding: 12px;
+  font-size: 18px;
+}
+header.header .wrapper a.phone {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+}
+header.header .wrapper .schedule {
+  margin: auto;
+}
+header.header .wrapper .schedule p {
+  color: white;
+  padding: 3px 0;
+  margin: auto;
+}
+
+.visit-slider .carousel-inner .carousel-item img.background-img.d-block.w-100 {
+  height: 1000px;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block {
+  width: 800px;
+  margin: 0 auto 18% auto;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block h1.slider-title {
+  line-height: 90px;
+  color: white;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block h4.slider-subtitle {
+  color: white;
+  margin-bottom: 45px;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider {
+  padding: 15px 85px;
+  position: relative;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider img.btn-icon {
+  position: absolute;
+  top: -4.6rem;
+  right: -4.5rem;
+}
+.visit-slider .carousel-indicators button.indicator_custom.active {
+  text-align: center !important;
+  width: 35px !important;
+  height: 35px !important;
+  opacity: 0.5 !important;
+  margin: auto 3px;
+}
+.visit-slider .carousel-indicators button.indicator_custom {
+  box-sizing: inherit !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50%;
+  background: white !important;
+  opacity: 1 !important;
+  margin: auto 3px;
+}
+.visit-slider button.carousel-control-prev,
+.visit-slider button.carousel-control-next {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  top: 70%;
+  text-align: center;
+}
+.visit-slider button.carousel-control-prev {
+  left: 5%;
+}
+.visit-slider button.carousel-control-next {
+  right: 5%;
+}
+
+.about {
+  margin: 100px auto;
+}
+.about h2.title {
+  margin: 50px auto;
+  text-align: center;
+}
+.about .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.about .row .column img.icon {
+  display: block;
+  margin: auto;
+  width: 135px;
+  height: 135px;
+}
+.about .row .column p.text {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.offers {
+  margin: 100px auto;
+}
+.offers h2.title {
+  margin: 50px auto;
+  text-align: center;
+}
+.offers .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  margin: auto 50px;
+}
+.offers .row .card {
+  padding: 3rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.offers .row .card h4.card-title {
+  margin: 30px auto;
+}
+.offers .row .card h3.card-price {
+  margin: 40px auto;
+}
+.offers .row .card button.card-button {
+  padding: 15px 55px;
+}
+
+.discounts {
+  margin: 100px auto;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/discount/discount-background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 550px;
+}
+.discounts .caption {
+  padding-top: 160px;
+}
+.discounts .caption h2.caption-title {
+  color: white;
+  text-align: center;
+  letter-spacing: 0.25em;
+  font-family: Montserrat, sans-serif;
+}
+.discounts .caption h3.caption-subtitle {
+  color: #DF7901;
+  text-align: center;
+}
+.discounts .caption p.caption-discount {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+}
+.discounts .caption button.caption-button {
+  display: block;
+  padding: 15px 70px;
+}
+
+.reviews-slider.container-xxl {
+  margin: 100px auto;
+}
+.reviews-slider.container-xxl h2.title {
+  margin: 50px auto;
+  text-align: center;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide {
+  margin: 60px auto;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  position: relative;
+  padding: 15px;
+  height: 200px;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card h4.username {
+  margin: auto;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback {
+  margin: auto;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback:before {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  left: 27%;
+  height: 150px;
+  border: 1px solid lightcoral;
+  opacity: 0.7;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev,
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next {
+  top: -250px;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev {
+  left: 1000px;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev span.carousel-control-prev-icon {
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next {
+  right: -75px;
+}
+.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next span.carousel-control-next-icon {
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+}
+.reviews-slider.container-xxl button.reviews-button {
+  font-size: 14px;
+  padding: 12px 30px;
+  display: block;
+}
+
+footer.footer {
+  background-image: url("../img/footer/footer-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 250px;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+}
+footer.footer .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+}
+footer.footer .wrapper .logo {
+  margin: auto;
+}
+footer.footer .wrapper .logo img {
+  display: block;
+  margin: auto;
+}
+footer.footer .wrapper nav.menu {
+  margin: auto 0 auto 4rem;
+}
+footer.footer .wrapper nav.menu a.link-item {
+  font-size: 14px;
+  padding: 2px 0;
+}
+footer.footer .wrapper nav.menu a.link-item:hover {
+  font-size: 20px;
+}
+footer.footer .wrapper .payment {
+  margin: 2rem auto 0 auto;
+  width: 60%;
+}
+footer.footer .wrapper .payment .payment-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+footer.footer .wrapper .payment .payment-icons i.fab.fa-cc-visa,
+footer.footer .wrapper .payment .payment-icons i.fab.fa-cc-mastercard {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+}
+footer.footer .wrapper .contacts {
+  margin: 2rem auto 0 auto;
+}
+footer.footer p.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+footer.footer p.copyright i.far.fa-copyright {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
