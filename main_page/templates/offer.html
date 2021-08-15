@@ -1,7 +1,7 @@
 <div class="offers">
-        <h2 class="title">Найдите что Вам по душе</h2>
-        <div class="row">
-            {% for item in offer %}
+    <h2 class="title">Почему выбирают нас</h2>
+    <div class="row">
+        {% for item in offer %}
             <div class="card">
                 <img class='card-img' src="{{ item.photo.url }}" alt="{{ item.title }}"/>
                 <h4 class="card-title">
@@ -14,9 +14,9 @@
                     {{ item.price }}
                 </h3>
                 <button class="card-button">
-                    Забронировать
+                    Подробнее
                 </button>
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
+</div>

@@ -20,6 +20,10 @@ from sauna_project import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('booking/', include('booking_calendar.urls')),
+    path('gallery/', include('gallery.urls')),
+    path('services/', include('services.urls')),
+    path('contacts/', include('contacts.urls')),
     path('', include('main_page.urls')),
 ]
 

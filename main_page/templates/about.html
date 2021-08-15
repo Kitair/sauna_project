@@ -1,13 +1,13 @@
-<div class="about container-xxl">
-        <h2 class="title">Почему выбирают нас</h2>
-        <div class="row">
-            {% for item in about %}
+<div class="about container">
+    <h2 class="title">Почему выбирают нас</h2>
+    <div class="row">
+        {% for item in about %}
             <div class="column">
                 <img src="{{ item.photo.url }}" alt="people-group" class="icon"/>
                 <p class="text">
                     {{ item.desc }}
                 </p>
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
+</div>

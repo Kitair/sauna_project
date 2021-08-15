@@ -1,36 +1,87 @@
+// carousel
 $carousel-control-color: black;
 $carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
 $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+@mixin carousel-buttons($pos-top:50%) {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  top: $pos-top;
+  text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+// font-size
 $font-size-xxl: 72px;
 $font-size-xl: 48px;
 $font-size-l: 36px;
 $font-size-m: 24px;
 $default-size: 18px;
-$header-text-color: white;
-$btn-color: white;
-$btn-background: #F59F39;
-$btn-background-hover: #DF7901;
-$btn-border-radius: 90px;
-$slide-text-color: white;
-$title-margin: 50px auto;
-$section-margin: 100px auto;
-$link-color: white;
 
-%nav-link-style {
+// text
+$general-text-color: black;
+$secondary-text-color: white;
+
+// links
+$link-color: white;
+$link-color-hover: white;
+
+@mixin nav-link-style($decor, $f-size, $f-size-hover) {
   display: block;
   margin: auto;
-  text-decoration: none;
+  text-decoration: $decor;
   color: $link-color;
   transition: font-size .3s;
-
+  font-size: $f-size;
   &:hover {
-    color: white;
+    color: $link-color-hover;
     text-decoration: none;
+    font-size: $f-size-hover;
   }
 }
 
+// btn
+$btn-text-color: white;
+$btn-color: #F59F39;
+$btn-color-hover: #DF7901;
+$btn-border-radius: 90px;
+$btn-border: none;
+
+@mixin btn-style($py, $px, $f-size ) {
+  display: block;
+  padding: $py $px;
+  margin: auto;
+  font-size: $f-size;
+  color: $btn-text-color;
+  background: $btn-color;
+  border: $btn-border;
+  border-radius: $btn-border-radius;
+  transition: background-color .3s;
+  &:hover {
+    background: $btn-color-hover;
+    cursor: pointer;
+  }
+}
+
+// title
+$title-my: 50px;
+$title-mx: auto;
+$title-align: center;
+
+@mixin title-position($my, $mx) {
+  text-align: $title-align;
+  margin: $my $mx;
+  color: $general-text-color;
+}
+
+// section
+$section-margin: 100px auto;
+
+// footer
 %footer-column-title-style {
-  color: white;
+  color: $general-text-color;
   text-align: center;
   position: relative;
   padding-bottom: 5px;
@@ -45,18 +96,14 @@ $link-color: white;
   }
 }
 
-%btn-style {
-  margin: auto;
-  color: $btn-color;
-  background: $btn-background;
-  border: none;
-  border-radius: $btn-border-radius;
-  transition: background-color .3s;
-
-  &:hover {
-    background: $btn-background-hover;
-    cursor: pointer;
-  }
+// services
+@mixin services-column($t-align, $f-weight) {
+  border-bottom: 1px solid lightgrey;
+  text-align: $t-align;
+  margin: 0;
+  padding: 5px;
+  font-weight: $f-weight;
+  color: $general-text-color;
 }
 
 * {
@@ -89,7 +136,7 @@ h4 {
   font-size: $font-size-m;
 }
 
-.container-xxl {
+.container {
   width: 1400px;
   margin: auto;
 }
@@ -121,31 +168,23 @@ header.header {
       grid-template-columns: 2fr 3fr 2fr 2fr;
 
       a.link-item {
-        @extend %nav-link-style;
-
-        &:hover {
-          font-size: 24px;
-        }
+        @include nav-link-style(none, 18px, 24px);
       }
     }
 
     button.btn-callback {
-      @extend %btn-style;
-      padding: 12px;
-      font-size: 18px;
+      @include btn-style(12px, 12px, 18px);
     }
 
     a.phone {
-      margin: auto;
-      text-decoration: none;
-      color: $header-text-color;
+      @include nav-link-style(none, 18px, 18px)
     }
 
     .schedule {
       margin: auto;
 
       p {
-        color: $header-text-color;
+        color: $secondary-text-color;
         padding: 3px 0;
         margin: auto;
       }
@@ -158,9 +197,7 @@ header.header {
 .visit-slider {
   .carousel-inner {
     .carousel-item {
-      img.background-img.d-block.w-100 {
-        height: 1000px;
-      }
+      height: 1000px;
 
       .carousel-caption.d-none.d-md-block {
         width: 800px;
@@ -168,17 +205,16 @@ header.header {
 
         h1.slider-title {
           line-height: 90px;
-          color: $slide-text-color;
+          color: $secondary-text-color;
         }
 
         h4.slider-subtitle {
-          color: $slide-text-color;
+          color: $secondary-text-color;
           margin-bottom: 45px;
         }
 
         button.btn-slider {
-          @extend %btn-style;
-          padding: 15px 85px;
+          @include btn-style(15px, 85px, 18px);
           position: relative;
 
           img.btn-icon {
@@ -213,12 +249,7 @@ header.header {
 
   button.carousel-control-prev,
   button.carousel-control-next {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background: white;
-    top: 70%;
-    text-align: center;
+    @include carousel-buttons(70%);
   }
 
   button.carousel-control-prev {
@@ -236,8 +267,7 @@ header.header {
   margin: $section-margin;
 
   h2.title {
-    margin: $title-margin;
-    text-align: center;
+    @include title-position($title-my, $title-mx);
   }
 
   .row {
@@ -253,6 +283,7 @@ header.header {
       }
 
       p.text {
+        color: $general-text-color;
         text-align: center;
         margin: 15px 0;
       }
@@ -266,8 +297,7 @@ header.header {
   margin: $section-margin;
 
   h2.title {
-    margin: $title-margin;
-    text-align: center;
+    @include title-position($title-my, $title-mx);
   }
 
   .row {
@@ -280,24 +310,22 @@ header.header {
       padding: 3rem;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-      img.card-img {
-
-      }
-
       h4.card-title {
         margin: 30px auto;
+        color: $general-text-color;
       }
 
       p.card-text {
+        color: $general-text-color;
       }
 
       h3.card-price {
+        color: $general-text-color;
         margin: 40px auto;
       }
 
       button.card-button {
-        @extend %btn-style;
-        padding: 15px 55px;
+        @include btn-style(15px, 55px, 18px);
       }
     }
   }
@@ -306,49 +334,78 @@ header.header {
 // --------------------------Discounts----------------------------
 
 .discounts {
+  position: relative;
   margin: $section-margin;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/discount/discount-background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 550px;
 
-  .caption {
-    padding-top: 160px;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
 
-    h2.caption-title {
-      color: white;
-      text-align: center;
-      letter-spacing: 0.25em;
-      font-family: Montserrat, sans-serif;
+  #carouselExampleControlsNoTouching.carousel.slide {
+    .carousel-inner {
+      .carousel-item {
+        height: 550px;
+
+        .carousel-caption.d-none.d-md-block {
+          z-index: 10;
+          top: 160px;
+
+          h2.caption-title {
+            color: $secondary-text-color;
+            text-align: center;
+            letter-spacing: 0.25em;
+            font-family: Montserrat, sans-serif;
+          }
+
+          h3.caption-subtitle {
+            color: #DF7901;
+            text-align: center;
+          }
+
+          p.caption-discount {
+            color: $secondary-text-color;
+            text-align: center;
+            font-size: 48px;
+          }
+
+          button.caption-button {
+            @include btn-style(15px, 70px, 18px);
+          }
+        }
+      }
     }
-
-    h3.caption-subtitle {
-      color: #DF7901;
-      text-align: center;
+    button.carousel-control-prev,
+    button.carousel-control-next {
+      @include carousel-buttons(50%);
     }
-
-    p.caption-discount {
-      font-size: 48px;
-      text-align: center;
-      color: white;
+    button.carousel-control-prev {
+      left: 5%;
+      span.carousel-control-prev-icon {
+        background: $carousel-control-prev-icon-bg;
+      }
     }
-
-    button.caption-button {
-      @extend %btn-style;
-      display: block;
-      padding: 15px 70px;
+    button.carousel-control-next {
+      right: 5%;
+      span.carousel-control-next-icon {
+        background: $carousel-control-next-icon-bg;
+      }
     }
   }
 }
 
-// --------------------------Reviews-Slider----------------------------
+// --------------------------Feedback-Slider----------------------------
 
-.reviews-slider.container-xxl {
+.feedback-slider.container {
   margin: $section-margin;
 
   h2.title {
-    margin: $title-margin;
-    text-align: center;
+    @include title-position($title-my, $title-mx);
   }
 
   #carouselExampleControls.carousel.slide {
@@ -365,10 +422,12 @@ header.header {
 
           h4.username {
             margin: auto;
+            color: $general-text-color;
           }
 
           p.user-feedback {
             margin: auto;
+            color: $general-text-color;
 
             &:before {
               content: '';
@@ -406,11 +465,8 @@ header.header {
     }
   }
 
-  button.reviews-button {
-    @extend %btn-style;
-    font-size: 14px;
-    padding: 12px 30px;
-    display: block;
+  button.feedback-button {
+    @include btn-style(12px, 30px, 14px);
   }
 }
 
@@ -441,13 +497,8 @@ footer.footer {
       margin: auto 0 auto 4rem;
 
       a.link-item {
-        @extend %nav-link-style;
-        font-size: 14px;
+        @include nav-link-style(none, 14px, 20px);
         padding: 2px 0;
-
-        &:hover {
-          font-size: 20px;
-        }
       }
     }
 
@@ -456,7 +507,8 @@ footer.footer {
       width: 60%;
 
       p.payment-title {
-        @extend %footer-column-title-style
+        @extend %footer-column-title-style;
+        color: $secondary-text-color;
       }
 
       .payment-icons {
@@ -476,11 +528,12 @@ footer.footer {
       margin: 2rem auto 0 auto;
 
       p.contact-title {
-        @extend %footer-column-title-style
+        @extend %footer-column-title-style;
+        color: $secondary-text-color;
       }
 
       a.contact-item {
-        @extend %nav-link-style
+        @include nav-link-style(none, 18px, 18px)
       }
     }
   }
@@ -488,11 +541,218 @@ footer.footer {
   p.copyright {
     text-align: center;
     font-size: 12px;
-    color: white;
+    color: $secondary-text-color;
 
     i.far.fa-copyright {
-      color: white;
+      color: $secondary-text-color;
     }
   }
 }
 
+// ---------------------------Booking---------------------------------
+
+section.booking {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .booking-wrapper {
+    width: 70%;
+    padding: 70px 175px;
+    background: white;
+    border-radius: 5px;
+    margin: auto;
+
+    h2.booking-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .booking-button {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      button.chose-booking {
+        @include btn-style(15px, 75px, 18px)
+      }
+    }
+
+    .booking-calendar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 3rem 0;
+
+      .calendar-wrapper {
+        height: 310px;
+        margin: auto;
+
+        #datepicker {
+        }
+
+        input#datepicker_value {
+        }
+      }
+
+      .visit-time {
+        width: 30%;
+        margin: 0 auto;
+
+        p.text {
+          color: $general-text-color;
+        }
+      }
+    }
+
+    .booking-description {
+      position: relative;
+
+      p.description-item {
+        padding: 15px 40px;
+
+        &:nth-child(1) {
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border-radius: 50%;
+          }
+        }
+
+        &:nth-child(2) {
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 18px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+          }
+        }
+
+      }
+    }
+
+    button.btn-booking {
+      @include btn-style(10px, 35px, 18px)
+    }
+  }
+}
+
+// ----------------------------Contacts------------------------------
+
+section.contacts {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .contacts-wrapper {
+    width: 70%;
+    height: 900px;
+    padding: 70px 175px;
+    background: white;
+    border-radius: 5px;
+    margin: auto;
+
+    h2.contacts-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .contacts-row {
+      display: grid;
+      grid-template-columns: 7fr 3fr;
+
+      .contacts-info {
+        .contacts-block {
+          margin-bottom: 40px;
+
+          h4.contacts-title {
+            color: $general-text-color;
+          }
+
+          a.contact-item {
+            @include nav-link-style(none, 18px, 18px);
+            color: $general-text-color;;
+
+            &:hover {
+              color: $general-text-color;
+            }
+          }
+        }
+
+        .schedule-block {
+          margin-bottom: 40px;
+
+          h4.schedule-title {
+            color: $general-text-color;
+          }
+
+          p.schedule-item {
+            color: $general-text-color;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------Services------------------------------
+
+section.services {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .services-wrapper {
+    width: 70%;
+    height: 900px;
+    padding: 70px 175px;
+    background: white;
+    border-radius: 5px;
+    margin: auto;
+
+    h2.services-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .services-row {
+      display: grid;
+      grid-template-columns: 7fr 3fr;
+      height: 80%;
+      overflow: auto;
+      .service-column {
+        p.column-name {
+          @include services-column(center, 600);
+        }
+
+        p.item-name {
+          @include services-column(center, 400);
+        }
+
+        p.column-price {
+          @include services-column(center, 600);
+          border-left: 1px solid lightgrey;
+        }
+
+        p.item-price {
+          @include services-column(center, 400);
+          border-left: 1px solid lightgrey;
+        }
+      }
+    }
+  }
+}

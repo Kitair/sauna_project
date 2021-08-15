@@ -12,6 +12,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href={% static "style/style.css" %}>
 </head>
 <body>
@@ -21,10 +22,10 @@
             <img src={% static "img/logo.png" %} alt="logo"/>
         </div>
         <nav class="menu">
-            <a class='link-item' href="">Главная</a>
-            <a class='link-item' href="">Сауна и чаны</a>
-            <a class='link-item' href="">Услуги</a>
-            <a class='link-item' href="">Контакты</a>
+            <a class='link-item' href="/">Главная</a>
+            <a class='link-item' href="/booking">Забронировать</a>
+            <a class='link-item' href="/services">Доп. услуги</a>
+            <a class='link-item' href="/contacts">Контакты</a>
         </nav>
         <button class="btn-callback">Перезвоните мне</button>
         <a class="phone" href="tel:+38(093)-000-00-00">+38(093)-000-00-00</a>
@@ -40,13 +41,13 @@
 <footer class="footer">
     <div class="wrapper">
         <div class="logo">
-            <img src="./img/logo.png" alt="logo"/>
+            <img src={% static "img/logo.png" %} alt="logo"/>
         </div>
         <nav class="menu">
-            <a class='link-item' href="">Главная</a>
-            <a class='link-item' href="">Сауна и чаны</a>
-            <a class='link-item' href="">Услуги</a>
-            <a class='link-item' href="">Контакты</a>
+            <a class='link-item' href="/">Главная</a>
+            <a class='link-item' href="/booking">Забронировать</a>
+            <a class='link-item' href="/services">Доп. услуги</a>
+            <a class='link-item' href="/contacts">Контакты</a>
         </nav>
         <div class="payment">
             <p class="payment-title">Способы оплаты</p>
@@ -67,21 +68,6 @@
     </div>
     <p class="copyright"><i class="far fa-copyright"></i> Все права защищены, 2021</p>
 </footer>
-<section class="appointment-calendar">
-        <div class="appointment-wrapper">
-            <h2 class="title">
-
-            </h2>
-            <div class="appointment-button">
-                <button class="booking">Забронировать сауну</button>
-                <button class="booking">Забронировать чан</button>
-            </div>
-            <form>
-                <p>Выберите дату: <input type="date" name="calendar">
-                    <input type="submit" value="Отправить"></p>
-            </form>
-        </div>
-</section>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -89,5 +75,9 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a8a9bc84b3.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{% static "js/calendar/calendar.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
 </body>
 </html>

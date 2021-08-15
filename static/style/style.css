@@ -1,17 +1,5 @@
-footer.footer .wrapper .contacts a.contact-item, footer.footer .wrapper nav.menu a.link-item, header.header .wrapper nav.menu a.link-item {
-  display: block;
-  margin: auto;
-  text-decoration: none;
-  color: white;
-  transition: font-size 0.3s;
-}
-footer.footer .wrapper .contacts a.contact-item:hover, footer.footer .wrapper nav.menu a.link-item:hover, header.header .wrapper nav.menu a.link-item:hover {
-  color: white;
-  text-decoration: none;
-}
-
 footer.footer .wrapper .contacts p.contact-title, footer.footer .wrapper .payment p.payment-title {
-  color: white;
+  color: black;
   text-align: center;
   position: relative;
   padding-bottom: 5px;
@@ -23,19 +11,6 @@ footer.footer .wrapper .contacts p.contact-title:before, footer.footer .wrapper 
   width: 100%;
   bottom: 0;
   left: 0;
-}
-
-.reviews-slider.container-xxl button.reviews-button, .discounts .caption button.caption-button, .offers .row .card button.card-button, .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider, header.header .wrapper button.btn-callback {
-  margin: auto;
-  color: white;
-  background: #F59F39;
-  border: none;
-  border-radius: 90px;
-  transition: background-color 0.3s;
-}
-.reviews-slider.container-xxl button.reviews-button:hover, .discounts .caption button.caption-button:hover, .offers .row .card button.card-button:hover, .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider:hover, header.header .wrapper button.btn-callback:hover {
-  background: #DF7901;
-  cursor: pointer;
 }
 
 * {
@@ -68,7 +43,7 @@ h4 {
   font-size: 24px;
 }
 
-.container-xxl {
+.container {
   width: 1400px;
   margin: auto;
 }
@@ -96,17 +71,46 @@ header.header .wrapper nav.menu {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr 2fr;
 }
-header.header .wrapper nav.menu a.link-item:hover {
-  font-size: 24px;
-}
-header.header .wrapper button.btn-callback {
-  padding: 12px;
-  font-size: 18px;
-}
-header.header .wrapper a.phone {
+header.header .wrapper nav.menu a.link-item {
+  display: block;
   margin: auto;
   text-decoration: none;
   color: white;
+  transition: font-size 0.3s;
+  font-size: 18px;
+}
+header.header .wrapper nav.menu a.link-item:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+header.header .wrapper button.btn-callback {
+  display: block;
+  padding: 12px 12px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+header.header .wrapper button.btn-callback:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+header.header .wrapper a.phone {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
+  font-size: 18px;
+}
+header.header .wrapper a.phone:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 header.header .wrapper .schedule {
   margin: auto;
@@ -117,7 +121,7 @@ header.header .wrapper .schedule p {
   margin: auto;
 }
 
-.visit-slider .carousel-inner .carousel-item img.background-img.d-block.w-100 {
+.visit-slider .carousel-inner .carousel-item {
   height: 1000px;
 }
 .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block {
@@ -133,8 +137,20 @@ header.header .wrapper .schedule p {
   margin-bottom: 45px;
 }
 .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider {
+  display: block;
   padding: 15px 85px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
   position: relative;
+}
+.visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider:hover {
+  background: #DF7901;
+  cursor: pointer;
 }
 .visit-slider .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.btn-slider img.btn-icon {
   position: absolute;
@@ -165,6 +181,7 @@ header.header .wrapper .schedule p {
   background: white;
   top: 70%;
   text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .visit-slider button.carousel-control-prev {
   left: 5%;
@@ -177,8 +194,9 @@ header.header .wrapper .schedule p {
   margin: 100px auto;
 }
 .about h2.title {
-  margin: 50px auto;
   text-align: center;
+  margin: 50px auto;
+  color: black;
 }
 .about .row {
   display: grid;
@@ -191,6 +209,7 @@ header.header .wrapper .schedule p {
   height: 135px;
 }
 .about .row .column p.text {
+  color: black;
   text-align: center;
   margin: 15px 0;
 }
@@ -199,8 +218,9 @@ header.header .wrapper .schedule p {
   margin: 100px auto;
 }
 .offers h2.title {
-  margin: 50px auto;
   text-align: center;
+  margin: 50px auto;
+  color: black;
 }
 .offers .row {
   display: grid;
@@ -214,68 +234,131 @@ header.header .wrapper .schedule p {
 }
 .offers .row .card h4.card-title {
   margin: 30px auto;
+  color: black;
+}
+.offers .row .card p.card-text {
+  color: black;
 }
 .offers .row .card h3.card-price {
+  color: black;
   margin: 40px auto;
 }
 .offers .row .card button.card-button {
+  display: block;
   padding: 15px 55px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+.offers .row .card button.card-button:hover {
+  background: #DF7901;
+  cursor: pointer;
 }
 
 .discounts {
+  position: relative;
   margin: 100px auto;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/discount/discount-background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+}
+.discounts:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item {
   height: 550px;
 }
-.discounts .caption {
-  padding-top: 160px;
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block {
+  z-index: 10;
+  top: 160px;
 }
-.discounts .caption h2.caption-title {
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block h2.caption-title {
   color: white;
   text-align: center;
   letter-spacing: 0.25em;
   font-family: Montserrat, sans-serif;
 }
-.discounts .caption h3.caption-subtitle {
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block h3.caption-subtitle {
   color: #DF7901;
   text-align: center;
 }
-.discounts .caption p.caption-discount {
-  font-size: 48px;
-  text-align: center;
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block p.caption-discount {
   color: white;
+  text-align: center;
+  font-size: 48px;
 }
-.discounts .caption button.caption-button {
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.caption-button {
   display: block;
   padding: 15px 70px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide .carousel-inner .carousel-item .carousel-caption.d-none.d-md-block button.caption-button:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-prev,
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-next {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  top: 50%;
+  text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-prev {
+  left: 5%;
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-prev span.carousel-control-prev-icon {
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-next {
+  right: 5%;
+}
+.discounts #carouselExampleControlsNoTouching.carousel.slide button.carousel-control-next span.carousel-control-next-icon {
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
 }
 
-.reviews-slider.container-xxl {
+.feedback-slider.container {
   margin: 100px auto;
 }
-.reviews-slider.container-xxl h2.title {
-  margin: 50px auto;
+.feedback-slider.container h2.title {
   text-align: center;
+  margin: 50px auto;
+  color: black;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide {
+.feedback-slider.container #carouselExampleControls.carousel.slide {
   margin: 60px auto;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card {
+.feedback-slider.container #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card {
   display: grid;
   grid-template-columns: 3fr 7fr;
   position: relative;
   padding: 15px;
   height: 200px;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card h4.username {
+.feedback-slider.container #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card h4.username {
   margin: auto;
+  color: black;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback {
+.feedback-slider.container #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback {
   margin: auto;
+  color: black;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback:before {
+.feedback-slider.container #carouselExampleControls.carousel.slide .carousel-inner .carousel-item .card p.user-feedback:before {
   content: "";
   position: absolute;
   bottom: 25px;
@@ -284,26 +367,36 @@ header.header .wrapper .schedule p {
   border: 1px solid lightcoral;
   opacity: 0.7;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev,
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next {
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-prev,
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-next {
   top: -250px;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev {
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-prev {
   left: 1000px;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-prev span.carousel-control-prev-icon {
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-prev span.carousel-control-prev-icon {
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next {
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-next {
   right: -75px;
 }
-.reviews-slider.container-xxl #carouselExampleControls.carousel.slide button.carousel-control-next span.carousel-control-next-icon {
+.feedback-slider.container #carouselExampleControls.carousel.slide button.carousel-control-next span.carousel-control-next-icon {
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
 }
-.reviews-slider.container-xxl button.reviews-button {
-  font-size: 14px;
-  padding: 12px 30px;
+.feedback-slider.container button.feedback-button {
   display: block;
+  padding: 12px 30px;
+  margin: auto;
+  font-size: 14px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+.feedback-slider.container button.feedback-button:hover {
+  background: #DF7901;
+  cursor: pointer;
 }
 
 footer.footer {
@@ -329,15 +422,25 @@ footer.footer .wrapper nav.menu {
   margin: auto 0 auto 4rem;
 }
 footer.footer .wrapper nav.menu a.link-item {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
   font-size: 14px;
   padding: 2px 0;
 }
 footer.footer .wrapper nav.menu a.link-item:hover {
+  color: white;
+  text-decoration: none;
   font-size: 20px;
 }
 footer.footer .wrapper .payment {
   margin: 2rem auto 0 auto;
   width: 60%;
+}
+footer.footer .wrapper .payment p.payment-title {
+  color: white;
 }
 footer.footer .wrapper .payment .payment-icons {
   display: grid;
@@ -352,6 +455,22 @@ footer.footer .wrapper .payment .payment-icons i.fab.fa-cc-mastercard {
 footer.footer .wrapper .contacts {
   margin: 2rem auto 0 auto;
 }
+footer.footer .wrapper .contacts p.contact-title {
+  color: white;
+}
+footer.footer .wrapper .contacts a.contact-item {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
+  font-size: 18px;
+}
+footer.footer .wrapper .contacts a.contact-item:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
 footer.footer p.copyright {
   text-align: center;
   font-size: 12px;
@@ -359,6 +478,217 @@ footer.footer p.copyright {
 }
 footer.footer p.copyright i.far.fa-copyright {
   color: white;
+}
+
+section.booking {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.booking .booking-wrapper {
+  width: 70%;
+  padding: 70px 175px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+}
+section.booking .booking-wrapper h2.booking-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.booking .booking-wrapper .booking-button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+section.booking .booking-wrapper .booking-button button.chose-booking {
+  display: block;
+  padding: 15px 75px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+section.booking .booking-wrapper .booking-button button.chose-booking:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+section.booking .booking-wrapper .booking-calendar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 0;
+}
+section.booking .booking-wrapper .booking-calendar .calendar-wrapper {
+  height: 310px;
+  margin: auto;
+}
+section.booking .booking-wrapper .booking-calendar .visit-time {
+  width: 30%;
+  margin: 0 auto;
+}
+section.booking .booking-wrapper .booking-calendar .visit-time p.text {
+  color: black;
+}
+section.booking .booking-wrapper .booking-description {
+  position: relative;
+}
+section.booking .booking-wrapper .booking-description p.description-item {
+  padding: 15px 40px;
+}
+section.booking .booking-wrapper .booking-description p.description-item:nth-child(1):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+}
+section.booking .booking-wrapper .booking-description p.description-item:nth-child(2):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+section.booking .booking-wrapper button.btn-booking {
+  display: block;
+  padding: 10px 35px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+section.booking .booking-wrapper button.btn-booking:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+
+section.contacts {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.contacts .contacts-wrapper {
+  width: 70%;
+  height: 900px;
+  padding: 70px 175px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+}
+section.contacts .contacts-wrapper h2.contacts-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.contacts .contacts-wrapper .contacts-row {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block {
+  margin-bottom: 40px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block h4.contacts-title {
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block a.contact-item {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
+  font-size: 18px;
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block a.contact-item:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block a.contact-item:hover {
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block {
+  margin-bottom: 40px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block h4.schedule-title {
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block p.schedule-item {
+  color: black;
+}
+
+section.services {
+  background-image: url("../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.services .services-wrapper {
+  width: 70%;
+  height: 900px;
+  padding: 70px 175px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+}
+section.services .services-wrapper h2.services-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.services .services-wrapper .services-row {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  height: 80%;
+  overflow: auto;
+}
+section.services .services-wrapper .services-row .service-column p.column-name {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 600;
+  color: black;
+}
+section.services .services-wrapper .services-row .service-column p.item-name {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 400;
+  color: black;
+}
+section.services .services-wrapper .services-row .service-column p.column-price {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 600;
+  color: black;
+  border-left: 1px solid lightgrey;
+}
+section.services .services-wrapper .services-row .service-column p.item-price {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 400;
+  color: black;
+  border-left: 1px solid lightgrey;
 }
 
 /*# sourceMappingURL=style.css.map */
