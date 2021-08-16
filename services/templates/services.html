@@ -7,16 +7,20 @@
             <h2 class="services-title">
                 Услуги
             </h2>
-            <div class="services-row">
-                <div class="service-column">
-                    <p class="column-name">Наименование</p>
-                    <p class="item-name">Веник</p>
+                <div class="services-row">
+                    <div class="service-column">
+                        <p class="column-name">Наименование</p>
+                        {% for item in services %}
+                        <p class="item-name">{{ item.title }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="service-column">
+                        <p class="column-price">Цена</p>
+                        {% for item in services %}
+                        <p class="item-price">{{ item.price }}</p>
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="service-column">
-                    <p class="column-price">Цена</p>
-                    <p class="item-price">100грн</p>
-                </div>
-            </div>
         </div>
     </section>
 {% endblock %}
