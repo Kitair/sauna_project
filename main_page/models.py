@@ -43,6 +43,7 @@ class Offer(models.Model):
     title = models.CharField(unique=True, max_length=50)
     desc = models.CharField(max_length=150, unique=True)
     price = models.CharField(unique=False, max_length=50)
+    link = models.CharField(unique=True, max_length=50)
     is_visible = models.BooleanField(default=True)
 
     def __str__(self):
