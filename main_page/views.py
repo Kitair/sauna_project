@@ -4,11 +4,11 @@ from .forms import FeedbackForm
 
 
 def main_views(request):
-    if request.method == 'Post':
-        form = FeedbackForm(request.POST)
+    if request.method == 'POST':
+        form_feedback = FeedbackForm(request.POST)
 
-        if form.is_valid():
-            form.save()
+        if form_feedback.is_valid():
+            form_feedback.save()
             return redirect('/')
 
     slider = Slider.objects.filter(is_visible=True)
