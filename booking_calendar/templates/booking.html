@@ -6,31 +6,55 @@
             <h2 class="booking-title">
                 Сауна и чаны
             </h2>
-            <div class="booking-button">
-                <button class="chose-booking">Забронировать сауну</button>
-                <button class="chose-booking">Забронировать чан</button>
+            <div class="booking-btn">
+                <label class="choose-booking" id="choose-sauna">
+                    <input type="radio" name="choose-booking" checked/>
+                    <span>Забронировать сауну </span>
+                </label>
+                <label class="choose-booking" id="choose-vat">
+                    <input type="radio" name="choose-booking"/>
+                    <span>Забронировать чан</span>
+                </label>
             </div>
             <div class="booking-calendar">
                 <div class="calendar-wrapper">
-                    <div id="datepicker"></div>
-                    <input type="hidden" id="datepicker_value"/>
+                    <div id="datepicker">
+                    </div>
+
                 </div>
                 <div class="visit-time">
                     <p class="text">
                         Время
                     </p>
-                    <p>9:00</p>
-                    <p>12:00</p>
-                    <p>15:00</p>
-                    <p>18:00</p>
-                    <p>21:00</p>
+                    <div class="timetable">
+                        <label class="choose-time">
+                            <input type="radio" name="choose-time" checked>
+                            <span>9:00</span>
+                        </label>
+                        <label class="choose-time">
+                            <input type="radio" name="choose-time">
+                            <span>12:00</span>
+                        </label>
+                        <label class="choose-time">
+                            <input type="radio" name="choose-time">
+                            <span>15:00</span>
+                        </label>
+                        <label class="choose-time">
+                            <input type="radio" name="choose-time" disabled>
+                            <span>18:00</span>
+                        </label>
+                        <label class="choose-time">
+                            <input type="radio" name="choose-time" disabled>
+                            <span>21:00</span>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="booking-description">
                 <p class="description-item">Есть места</p>
                 <p class="description-item">Мест нет</p>
             </div>
-            <button class="btn-booking">Забронировать</button>
+            <button id="booking">Забронировать</button>
         </div>
     </section>
 {% endblock %}

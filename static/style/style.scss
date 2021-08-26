@@ -1,4 +1,4 @@
-// carousel
+// --------------------------carousel------------------------------
 $carousel-control-color: black;
 $carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
 $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
@@ -13,24 +13,33 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-// font-size
+// --------------------------container-------------------------------
+$container-width: 1440px;
+
+.container {
+  width: $container-width;
+  margin: auto;
+}
+
+// ---------------------------font-size------------------------------
 $font-size-xxl: 72px;
 $font-size-xl: 48px;
 $font-size-l: 36px;
 $font-size-m: 24px;
 $default-size: 18px;
 
-// text
+// ------------------------------text--------------------------------
 $general-text-color: black;
 $secondary-text-color: white;
 
-// links
+// ------------------------------links--------------------------------
 $link-color: white;
 $link-color-hover: white;
 
-@mixin nav-link-style($decor, $f-size, $f-size-hover) {
+@mixin nav-link-style( $text-align, $decor, $f-size, $f-size-hover) {
   display: block;
   margin: auto;
+  text-align: $text-align;
   text-decoration: $decor;
   color: $link-color;
   transition: font-size .3s;
@@ -42,7 +51,7 @@ $link-color-hover: white;
   }
 }
 
-// btn
+// -----------------------------btn-------------------------------
 $btn-text-color: white;
 $btn-color: #F59F39;
 $btn-color-hover: #DF7901;
@@ -65,7 +74,19 @@ $btn-border: none;
   }
 }
 
-// title
+// ---------------------------radio-btn------------------------------
+@mixin radio-btn-style($border-color ) {
+  text-align: center;
+  display: block;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+  &:hover {
+    background: #a5c3d3;
+  }
+}
+
+// ------------------------------title--------------------------------
 $title-my: 50px;
 $title-mx: auto;
 $title-align: center;
@@ -76,10 +97,19 @@ $title-align: center;
   color: $general-text-color;
 }
 
-// section
+// -----------------------------section-------------------------------
 $section-margin: 100px auto;
 
-// footer
+@mixin section-block-wrapper($width:70%, $py:70px, $px:175px, $min-height:900px) {
+  width: $width;
+  padding: $px $py;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  min-height: $min-height;
+}
+
+// -----------------------------footer--------------------------------
 %footer-column-title-style {
   color: $general-text-color;
   text-align: center;
@@ -96,7 +126,7 @@ $section-margin: 100px auto;
   }
 }
 
-// services
+// ----------------------------services-------------------------------
 @mixin services-column($t-align, $f-weight) {
   border-bottom: 1px solid lightgrey;
   text-align: $t-align;
@@ -136,25 +166,24 @@ h4 {
   font-size: $font-size-m;
 }
 
-.container {
-  width: 1400px;
-  margin: auto;
-}
+// -----------------------Header styles----------------------------
 
-// ----------------------Header styles---------------------------
 header.header {
   height: 100px;
   width: 100%;
   background-image: url("../img/header/header-background.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 
   .wrapper {
     display: grid;
-    grid-template-columns: 2fr 5fr 2fr 2fr 2fr;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-areas: '. logo content content content content content content content content content content content .';
     height: 100%;
 
+
     .logo {
+      grid-area: logo;
       margin: auto;
 
       img {
@@ -163,61 +192,117 @@ header.header {
       }
     }
 
-    nav.menu {
-      display: grid;
-      grid-template-columns: 2fr 3fr 2fr 2fr;
-
-      a.link-item {
-        @include nav-link-style(none, 18px, 24px);
-      }
-    }
-
-    button.btn-callback {
-      @include btn-style(12px, 12px, 18px);
-    }
-
-    a.phone {
-      @include nav-link-style(none, 18px, 18px)
-    }
-
-    .schedule {
+    .collapse-toggle {
+      display: none;
+      position: relative;
+      width: 40px;
+      height: 40px;
       margin: auto;
+      border: 1px solid white;
+      border-radius: 8px;
+      background: transparent;
 
-      p {
-        color: $secondary-text-color;
-        padding: 3px 0;
-        margin: auto;
+      span:nth-child(1) {
+        border: 1px solid white;
+        border-radius: 5px;
+        position: absolute;
+        top: 25%;
+        left: 9px;
+        width: 20px;
+      }
+
+      span:nth-child(2) {
+        border: 1px solid white;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 9px;
+        width: 20px;
+      }
+
+      span:nth-child(3) {
+        border: 1px solid white;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 25%;
+        left: 9px;
+        width: 20px;
       }
     }
+
+    .content-collapse {
+      display: grid;
+      grid-area: content;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-areas: 'links links links links links . btn btn phone phone schedule';
+
+      .links-nav {
+        grid-area: links;
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr 2fr;
+
+        .link-item {
+          @include nav-link-style(center, none, 18px, 24px);
+        }
+      }
+
+      .btn-callback {
+        grid-area: btn;
+        @include btn-style(12px, 12px, 18px);
+      }
+
+      .phone {
+        grid-area: phone;
+        @include nav-link-style(center, none, 18px, 18px)
+      }
+
+      .schedule {
+        grid-area: schedule;
+        margin: auto;
+
+        p {
+          color: $secondary-text-color;
+          padding: 3px 0;
+          margin: auto;
+          text-align: center;
+        }
+      }
+    }
+
+
   }
 }
 
-// ----------------------Visit-Slider styles---------------------------
+// --------------------Visit-Slider styles-------------------------
 
 .visit-slider {
   .carousel-inner {
     .carousel-item {
       height: 1000px;
 
-      .carousel-caption.d-none.d-md-block {
+      .background-img {
+        height: 100%;
+      }
+
+      .carousel-caption {
         width: 800px;
         margin: 0 auto 18% auto;
 
-        h1.slider-title {
+        .slider-title {
           line-height: 90px;
           color: $secondary-text-color;
         }
 
-        h4.slider-subtitle {
+        .slider-subtitle {
           color: $secondary-text-color;
           margin-bottom: 45px;
         }
 
-        button.btn-slider {
+        .btn-slider {
           @include btn-style(15px, 85px, 18px);
           position: relative;
 
-          img.btn-icon {
+          .btn-icon {
             position: absolute;
             top: -4.6rem;
             right: -4.5rem;
@@ -228,7 +313,7 @@ header.header {
   }
 
   .carousel-indicators {
-    button.indicator_custom.active {
+    .indicator_custom.active {
       text-align: center !important;
       width: 35px !important;
       height: 35px !important;
@@ -236,7 +321,7 @@ header.header {
       margin: auto 3px;
     }
 
-    button.indicator_custom {
+    .indicator_custom {
       box-sizing: inherit !important;
       width: 28px !important;
       height: 28px !important;
@@ -247,26 +332,27 @@ header.header {
     }
   }
 
-  button.carousel-control-prev,
-  button.carousel-control-next {
+  .carousel-control-prev,
+  .carousel-control-next {
     @include carousel-buttons(70%);
   }
 
-  button.carousel-control-prev {
+  .carousel-control-prev {
     left: 5%;
   }
 
-  button.carousel-control-next {
+  .carousel-control-next {
     right: 5%;
   }
 }
 
-// --------------------------About--------------------------------
+// ------------------------About styles----------------------------
 
 .about {
   margin: $section-margin;
 
-  h2.title {
+
+  .title {
     @include title-position($title-my, $title-mx);
   }
 
@@ -275,14 +361,15 @@ header.header {
     grid-template-columns: repeat(3, 1fr);
 
     .column {
-      img.icon {
+
+      .icon {
         display: block;
         margin: auto;
         width: 135px;
         height: 135px;
       }
 
-      p.text {
+      .text {
         color: $general-text-color;
         text-align: center;
         margin: 15px 0;
@@ -291,18 +378,18 @@ header.header {
   }
 }
 
-// --------------------------Offers--------------------------------
+// ------------------------Offers styles---------------------------
 
 .offers {
   margin: $section-margin;
 
-  h2.title {
+  .title {
     @include title-position($title-my, $title-mx);
   }
 
   .row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
     margin: auto 50px;
 
@@ -310,122 +397,132 @@ header.header {
       padding: 3rem;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-      h4.card-title {
+      .card-title {
         margin: 30px auto;
         color: $general-text-color;
       }
 
-      p.card-text {
+      .card-text {
         color: $general-text-color;
       }
 
-      h3.card-price {
+      .card-price {
         color: $general-text-color;
         margin: 40px auto;
       }
 
-      button.card-button {
+      .card-button {
         @include btn-style(15px, 55px, 18px);
       }
     }
   }
 }
 
-// --------------------------Discounts----------------------------
+// -----------------------Discounts styles-------------------------
 
 .discounts {
   position: relative;
   margin: $section-margin;
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  }
-
-  #carouselExampleControlsNoTouching.carousel.slide {
+  #carouselExampleFade {
     .carousel-inner {
       .carousel-item {
+        background-image: url("../img/discount/discount-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 550px;
+
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.5);
+        }
 
         .carousel-caption.d-none.d-md-block {
           z-index: 10;
           top: 160px;
 
-          h2.caption-title {
+          .caption-title {
             color: $secondary-text-color;
             text-align: center;
             letter-spacing: 0.25em;
             font-family: Montserrat, sans-serif;
           }
 
-          h3.caption-subtitle {
+          .caption-subtitle {
             color: #DF7901;
             text-align: center;
           }
 
-          p.caption-discount {
+          .caption-discount {
             color: $secondary-text-color;
             text-align: center;
             font-size: 48px;
           }
 
-          button.caption-button {
+          .caption-button {
             @include btn-style(15px, 70px, 18px);
           }
         }
       }
     }
-    button.carousel-control-prev,
-    button.carousel-control-next {
+
+    .carousel-control-prev,
+    .carousel-control-next {
       @include carousel-buttons(50%);
     }
-    button.carousel-control-prev {
+
+    .carousel-control-prev {
       left: 5%;
-      span.carousel-control-prev-icon {
+
+      .carousel-control-prev-icon {
         background: $carousel-control-prev-icon-bg;
       }
     }
-    button.carousel-control-next {
+
+    .carousel-control-next {
       right: 5%;
-      span.carousel-control-next-icon {
+
+      .carousel-control-next-icon {
         background: $carousel-control-next-icon-bg;
       }
     }
   }
 }
 
-// --------------------------Feedback-Slider----------------------------
+// ---------------------Feedback-Slider styles---------------------
 
-.feedback-slider.container {
+.feedback-slider {
   margin: $section-margin;
 
-  h2.title {
+  .title {
     @include title-position($title-my, $title-mx);
   }
 
-  #carouselExampleControls.carousel.slide {
+  #carouselExampleControls {
     margin: 60px auto;
 
     .carousel-inner {
       .carousel-item {
         .card {
+          position: relative;
           display: grid;
           grid-template-columns: 3fr 7fr;
-          position: relative;
+          grid-gap: 2rem;
           padding: 15px;
           height: 200px;
 
-          h4.username {
+          .username {
             margin: auto;
             color: $general-text-color;
           }
 
-          p.user-feedback {
+          .user-feedback {
             margin: auto;
             color: $general-text-color;
 
@@ -433,7 +530,7 @@ header.header {
               content: '';
               position: absolute;
               bottom: 25px;
-              left: 27%;
+              left: 28.5%;
               height: 150px;
               border: 1px solid lightcoral;
               opacity: .7;
@@ -443,38 +540,113 @@ header.header {
       }
     }
 
-    button.carousel-control-prev,
-    button.carousel-control-next {
-      top: -250px;
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: -25%;
+      width: 50px;
+      height: 50px;
     }
 
-    button.carousel-control-prev {
-      left: 1000px;
+    .carousel-control-prev {
+      left: 75%;
 
-      span.carousel-control-prev-icon {
+      .carousel-control-prev-icon {
         background: $carousel-control-prev-icon-bg;
       }
     }
 
-    button.carousel-control-next {
-      right: -75px;
+    .carousel-control-next {
+      right: 5%;
 
-      span.carousel-control-next-icon {
+      .carousel-control-next-icon {
         background: $carousel-control-next-icon-bg;
       }
     }
   }
 
-  button.feedback-button {
-    @include btn-style(12px, 30px, 14px);
+  .feedback-button {
+    @include btn-style(15px, 30px, 14px);
   }
+
+  .popup-form {
+    .feedback-form {
+      position: fixed;
+      top: 25%;
+      left: 25%;
+      padding: 50px;
+      margin: auto;
+      width: 50%;
+      border-radius: 8px;
+      background: #3b3b3b;
+      z-index: 15;
+
+      .grid-box {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        label {
+          .feedback-input {
+            display: inline-block;
+            margin: 50px 0;
+            padding-left: 5%;
+            width: 90%;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            box-sizing: content-box;
+          }
+        }
+
+        label:nth-child(2) {
+          .feedback-input {
+            margin-left: 5%;
+          }
+        }
+      }
+
+      label {
+        width: 100%;
+
+        .feedback-textarea {
+          display: block;
+          margin-bottom: 50px;
+          padding: 30px;
+          resize: none;
+          width: 100%;
+          height: 230px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+        }
+      }
+
+      #send-feedback {
+        @include btn-style(15px, 80px, 18px)
+      }
+    }
+
+    &:after {
+      content: '';
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+  }
+
+
 }
 
-// -----------------------------Footer-----------------------------
+// -------------------------Footer styles--------------------------
 
 footer.footer {
   background-image: url("../img/footer/footer-background.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 250px;
   display: grid;
@@ -493,11 +665,11 @@ footer.footer {
       }
     }
 
-    nav.menu {
+    .menu {
       margin: auto 0 auto 4rem;
 
-      a.link-item {
-        @include nav-link-style(none, 14px, 20px);
+      .link-item {
+        @include nav-link-style(left, none, 14px, 20px);
         padding: 2px 0;
       }
     }
@@ -506,7 +678,7 @@ footer.footer {
       margin: 2rem auto 0 auto;
       width: 60%;
 
-      p.payment-title {
+      .payment-title {
         @extend %footer-column-title-style;
         color: $secondary-text-color;
       }
@@ -527,18 +699,18 @@ footer.footer {
     .contacts {
       margin: 2rem auto 0 auto;
 
-      p.contact-title {
+      .contact-title {
         @extend %footer-column-title-style;
         color: $secondary-text-color;
       }
 
-      a.contact-item {
-        @include nav-link-style(none, 18px, 18px)
+      .contact-item {
+        @include nav-link-style(center, none, 18px, 18px);
       }
     }
   }
 
-  p.copyright {
+  .copyright {
     text-align: center;
     font-size: 12px;
     color: $secondary-text-color;
@@ -549,7 +721,7 @@ footer.footer {
   }
 }
 
-// ---------------------------Booking---------------------------------
+// -------------------------Booking styles-------------------------
 
 section.booking {
   background-image: url("../img/page-background.png");
@@ -559,23 +731,40 @@ section.booking {
   background-repeat: no-repeat;
 
   .booking-wrapper {
-    width: 70%;
-    padding: 70px 175px;
-    background: white;
-    border-radius: 5px;
-    margin: auto;
+    @include section-block-wrapper();
 
-    h2.booking-title {
+    .booking-title {
       margin: 0 auto 50px auto;
       text-align: center;
     }
 
-    .booking-button {
+    .booking-btn {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
-      button.chose-booking {
-        @include btn-style(15px, 75px, 18px)
+      .choose-booking {
+        width: 85%;
+        margin: auto;
+        text-align: center;
+      }
+
+      .choose-booking input[type=radio] {
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+      }
+
+      .choose-booking input[type=radio]:checked + span {
+        color: white;
+        opacity: 1;
+      }
+
+      .choose-booking span {
+        @include btn-style(15px, 75px, 18px);
+        background: #DF7901;
+        opacity: .5;
       }
     }
 
@@ -587,20 +776,56 @@ section.booking {
       .calendar-wrapper {
         height: 310px;
         margin: auto;
-
-        #datepicker {
-        }
-
-        input#datepicker_value {
-        }
       }
 
       .visit-time {
-        width: 30%;
+        width: 60%;
         margin: 0 auto;
 
-        p.text {
+        .text {
+          text-align: center;
           color: $general-text-color;
+        }
+      }
+
+      .timetable {
+        margin: 0;
+
+        .choose-time {
+          display: block;
+          width: 100px;
+          height: 30px;
+          margin: .3rem auto;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .choose-time input[type=radio] {
+          z-index: -1;
+          opacity: 0;
+          display: block;
+          width: 0;
+          height: 0;
+        }
+
+        .choose-time span {
+          @include radio-btn-style(darkgrey);
+        }
+
+        .choose-time input[type=radio]:checked + span {
+          color: white;
+          background: #F59F39;
+        }
+
+        .choose-time input[type=radio]:disabled + span {
+          color: white;
+          background: rgba(0, 0, 0, .2);
+
+          &:hover {
+            cursor: default;
+          }
         }
       }
     }
@@ -608,15 +833,16 @@ section.booking {
     .booking-description {
       position: relative;
 
-      p.description-item {
-        padding: 15px 40px;
+      .description-item {
+        padding: 10px 40px;
+        margin: 0;
 
         &:nth-child(1) {
           &:after {
             content: '';
             position: absolute;
             left: 0;
-            top: 18px;
+            top: 12px;
             width: 20px;
             height: 20px;
             background-color: green;
@@ -629,7 +855,7 @@ section.booking {
             content: '';
             position: absolute;
             left: 0;
-            bottom: 18px;
+            bottom: 14px;
             width: 20px;
             height: 20px;
             background-color: red;
@@ -640,13 +866,13 @@ section.booking {
       }
     }
 
-    button.btn-booking {
+    #booking {
       @include btn-style(10px, 35px, 18px)
     }
   }
 }
 
-// ----------------------------Contacts------------------------------
+// -------------------------Contacts styles------------------------
 
 section.contacts {
   background-image: url("../img/page-background.png");
@@ -656,32 +882,33 @@ section.contacts {
   background-repeat: no-repeat;
 
   .contacts-wrapper {
-    width: 70%;
-    height: 900px;
-    padding: 70px 175px;
-    background: white;
-    border-radius: 5px;
-    margin: auto;
+    @include section-block-wrapper();
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
 
-    h2.contacts-title {
+    .contacts-title {
       margin: 0 auto 50px auto;
       text-align: center;
     }
 
     .contacts-row {
       display: grid;
-      grid-template-columns: 7fr 3fr;
+      grid-template-columns: 2fr 1fr;
+      color: white;
+      grid-gap: 2rem;
 
       .contacts-info {
         .contacts-block {
           margin-bottom: 40px;
 
-          h4.contacts-title {
+          .contacts-title {
+            text-align: center;
             color: $general-text-color;
           }
 
-          a.contact-item {
-            @include nav-link-style(none, 18px, 18px);
+          .contact-item {
+            @include nav-link-style(center, none, 18px, 18px);
             color: $general-text-color;;
 
             &:hover {
@@ -693,11 +920,13 @@ section.contacts {
         .schedule-block {
           margin-bottom: 40px;
 
-          h4.schedule-title {
+          .schedule-title {
+            text-align: center;
             color: $general-text-color;
           }
 
-          p.schedule-item {
+          .schedule-item {
+            text-align: center;
             color: $general-text-color;
 
           }
@@ -707,7 +936,7 @@ section.contacts {
   }
 }
 
-// ----------------------------Services------------------------------
+// -------------------------Services styles------------------------
 
 section.services {
   background-image: url("../img/page-background.png");
@@ -717,14 +946,9 @@ section.services {
   background-repeat: no-repeat;
 
   .services-wrapper {
-    width: 70%;
-    height: 900px;
-    padding: 70px 175px;
-    background: white;
-    border-radius: 5px;
-    margin: auto;
+    @include section-block-wrapper();
 
-    h2.services-title {
+    .services-title {
       margin: 0 auto 50px auto;
       text-align: center;
     }
@@ -734,25 +958,439 @@ section.services {
       grid-template-columns: 7fr 3fr;
       height: 80%;
       overflow: auto;
+
       .service-column {
-        p.column-name {
+        .column-name {
           @include services-column(center, 600);
         }
 
-        p.item-name {
+        .item-name {
           @include services-column(center, 400);
         }
 
-        p.column-price {
+        .column-price {
           @include services-column(center, 600);
           border-left: 1px solid lightgrey;
         }
 
-        p.item-price {
+        .item-price {
           @include services-column(center, 400);
           border-left: 1px solid lightgrey;
         }
       }
     }
   }
+}
+
+// --------------------------Gallery styles------------------------
+
+section.gallery {
+  .title {
+    @include title-position($title-my, $title-mx)
+  }
+
+  .gallery-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    position: relative;
+
+    .gallery-img {
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .5);
+        }
+
+        &:hover i.fas.fa-search {
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .show-popup {
+        position: absolute;
+        top: 42%;
+        left: 43%;
+        width: 45px;
+        height: 45px;
+        z-index: 5;
+
+        i.fas.fa-search {
+          font-size: 100px;
+          color: white;
+          opacity: .5;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .gallery-description {
+      .title {
+      }
+
+      .text {
+        margin: 45px 0;
+      }
+
+      .price {
+        .price-title {
+          margin: 0;
+        }
+
+        .price-text {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .gallery-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 600px;
+    margin: 3rem auto;
+
+    .btn {
+      @include btn-style(0, 0, 18px);
+      width: 50px;
+      height: 50px;
+    }
+
+    .btn:nth-child(2) {
+      @include btn-style(0, 0, 18px);
+      width: 250px;
+      height: 50px;
+    }
+  }
+
+  .gallery-popup {
+    &:after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(10px);
+      z-index: 15;
+    }
+
+    .gallery-slider {
+
+      #carouselExampleControlsNoTouching {
+        position: fixed;
+        width: 70%;
+        top: 12.5%;
+        left: 15%;
+        z-index: 20;
+
+        .carousel-inner {
+          width: 100%;
+          margin: auto;
+
+          #hide-popup {
+            position: fixed;
+            top: 5%;
+            right: 15%;
+            font-size: 55px;
+            color: black;
+            z-index: 20;
+            opacity: .3;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 1;
+            }
+          }
+
+          .carousel-item {
+            img {
+              margin: auto;
+              width: 100%;
+              height: 75vh;
+            }
+          }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          top: 40%;
+          height: 150px;
+          width: 70px;
+          background: black;
+        }
+
+        .carousel-control-prev {
+          left: 0;
+        }
+
+        .carousel-control-next {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// ---------------------------Media Queries--------------------------------
+@media screen and (max-width: 1439.98px) {
+  .container {
+    width: 100%;
+  }
+
+  header.header {
+    background-size: auto;
+
+    .wrapper {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas: 'logo content content content content content content content content content content content';
+
+      .logo {
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .visit-slider {
+    .carousel-inner {
+      .carousel-item {
+        height: 825px;
+      }
+    }
+  }
+
+  section.booking {
+
+    .booking-wrapper {
+      @include section-block-wrapper(85%);
+
+      .booking-btn {
+        .choose-booking {
+          width: 85%;
+        }
+      }
+    }
+  }
+
+  section.contacts {
+
+    .contacts-wrapper {
+      @include section-block-wrapper(85%);
+
+      .contacts-row {
+        grid-template-columns: 7fr 4fr;
+      }
+    }
+  }
+
+  section.services {
+
+    .services-wrapper {
+      @include section-block-wrapper(85%);
+    }
+  }
+
+  section.gallery {
+
+    .gallery-popup {
+
+      .gallery-slider {
+
+        #carouselExampleControlsNoTouching {
+          width: 80%;
+          left: 10%;
+
+          .carousel-inner {
+
+            #hide-popup {
+              right: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  header.header {
+
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      grid-template-areas: '. logo  menu menu menu menu menu . btn btn phone phone schedule .';
+      height: 100%;
+
+
+      .logo {
+        grid-area: logo;
+        margin: auto;
+
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .menu {
+        grid-template-columns: 3fr 5fr 3fr 3fr;
+      }
+    }
+  }
+
+  .visit-slider {
+    .carousel-inner {
+      .carousel-item {
+        height: 650px;
+
+        .carousel-caption {
+          top: 15%;
+          left: 12.5%;
+          width: 75%;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  footer.footer {
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr 3fr;
+
+      .menu {
+        margin: auto 0 auto 5rem;
+      }
+
+      .payment {
+        width: 70%;
+
+        .payment-title {
+          @extend %footer-column-title-style;
+          color: $secondary-text-color;
+        }
+
+        .payment-icons {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          i.fab.fa-cc-visa,
+          i.fab.fa-cc-mastercard {
+            color: white;
+            font-size: 70px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  section.booking {
+
+    .booking-wrapper {
+      @include section-block-wrapper(95%, 35px, 90px);
+
+      .booking-btn {
+
+        .choose-booking {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  section.contacts {
+
+    .contacts-wrapper {
+      @include section-block-wrapper(95%, 35px, 90px, 700px);
+
+      .contacts-row {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+  }
+
+  section.services {
+
+    .services-wrapper {
+      @include section-block-wrapper(95%, 35px, 90px, 700px);
+    }
+  }
+
+  section.gallery {
+    .title {
+      @include title-position($title-my, $title-mx)
+    }
+
+    .gallery-content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      .gallery-img {
+        .show-popup {
+          left: 45%;
+        }
+      }
+    }
+
+    .gallery-popup {
+
+      .gallery-slider {
+
+        #carouselExampleControlsNoTouching {
+          width: 95%;
+          left: 2.5%;
+          top: 17.5%;
+
+          .carousel-inner {
+
+            #hide-popup {
+              top: 11%;
+              right: 3%;
+            }
+
+            .carousel-item {
+              img {
+                height: 65vh;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+
+}
+
+@media screen and (max-width: 767.98px) {
+
+}
+
+@media screen and (max-width: 575.98px) {
+
 }

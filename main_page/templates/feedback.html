@@ -10,7 +10,7 @@
                                 {{ item.user_name }}
                             </h4>
                             <p class="user-feedback">
-                                {{ item.quote }}
+                                {{ item.user_message }}
                             </p>
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                                 {{ item.user_name }}
                             </h4>
                             <p class="user-feedback">
-                                {{ item.quote }}
+                                {{ item.user_message }}
                             </p>
                         </div>
                     </div>
@@ -42,4 +42,21 @@
     <button class="feedback-button">
         Оставить отзыв
     </button>
+    <div class="popup-form">
+        <form class="feedback-form" method="post">
+            {% csrf_token %}
+            <div class="grid-box">
+                <label>
+                    {{ form_feedback.user_name }}
+                </label>
+                <label>
+                    {{ form_feedback.user_email }}
+                </label>
+            </div>
+            <label>
+                {{ form_feedback.user_message }}
+            </label>
+            <input type="submit" id="send-feedback">Отправить</input>
+        </form>
+    </div>
 </div>
