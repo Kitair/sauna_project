@@ -39,11 +39,11 @@
             <span class="visually-hidden">Следующий</span>
         </button>
     </div>
-    <button class="feedback-button">
+    <button class="feedback-button" id="show-feedback-form">
         Оставить отзыв
     </button>
     <div class="popup-form">
-        <form class="feedback-form" method="post">
+        <form class="feedback-form">
             {% csrf_token %}
             <div class="grid-box">
                 <label>

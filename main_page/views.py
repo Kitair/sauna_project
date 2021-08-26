@@ -16,7 +16,8 @@ def main_views(request):
     offer = Offer.objects.filter(is_visible=True)
     events = Events.objects.filter(is_visible=True)
     feedback = Feedback.objects.filter(is_visible=True)
-    form = FeedbackForm()
+    form_feedback = FeedbackForm()
 
     return render(request, 'index.html', context={'slider': slider, 'about': about, 'offer': offer,
-                                                  'events': events, 'feedback': feedback, 'form_feedback': form, })
+                                                  'events': events, 'feedback': feedback,
+                                                  'form_feedback': form_feedback, })
