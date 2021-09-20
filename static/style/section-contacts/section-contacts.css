@@ -1,0 +1,66 @@
+section.contacts {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.contacts .contacts-wrapper {
+  width: 70%;
+  padding: 175px 70px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  min-height: 900px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+section.contacts .contacts-wrapper .contacts-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.contacts .contacts-wrapper .contacts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: white;
+  grid-gap: 2rem;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block {
+  margin-bottom: 40px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block .contacts-title {
+  text-align: center;
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block .contact-item {
+  display: block;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: font-size 0.3s;
+  font-size: 18px;
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block .contact-item:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .contacts-block .contact-item:hover {
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block {
+  margin-bottom: 40px;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block .schedule-title {
+  text-align: center;
+  color: black;
+}
+section.contacts .contacts-wrapper .contacts-row .contacts-info .schedule-block .schedule-item {
+  text-align: center;
+  color: black;
+}
+
+/*# sourceMappingURL=section-contacts.css.map */

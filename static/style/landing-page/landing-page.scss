@@ -1,0 +1,352 @@
+@import '../variables/variebles';
+@import "../mixins/mixins";
+
+// --------------------Visit-Slider styles-------------------------
+
+.visit-slider {
+  .carousel-inner {
+    .carousel-item {
+      height: 1000px;
+
+      .background-img {
+        height: 100%;
+      }
+
+      .carousel-caption {
+        width: 800px;
+        margin: 0 auto 18% auto;
+
+        .slider-title {
+          line-height: 90px;
+          color: $secondary-text-color;
+        }
+
+        .slider-subtitle {
+          color: $secondary-text-color;
+          margin-bottom: 45px;
+        }
+
+        .btn-slider {
+          @include btn(15px, 85px);
+          position: relative;
+
+          .btn-icon {
+            position: absolute;
+            top: -4.6rem;
+            right: -4.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    .indicator_custom.active {
+      text-align: center !important;
+      width: 35px !important;
+      height: 35px !important;
+      opacity: .5 !important;
+      margin: auto 3px;
+    }
+
+    .indicator_custom {
+      box-sizing: inherit !important;
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 50%;
+      background: white !important;
+      opacity: 1 !important;
+      margin: auto 3px;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    @include carousel-buttons(70%);
+  }
+
+  .carousel-control-prev {
+    left: 5%;
+  }
+
+  .carousel-control-next {
+    right: 5%;
+  }
+}
+
+// ------------------------About styles----------------------------
+
+.about {
+  margin: $section-margin;
+
+
+  .title {
+    @include title-position($title-my, $title-mx);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .column {
+
+      .icon {
+        display: block;
+        margin: auto;
+        width: 135px;
+        height: 135px;
+      }
+
+      .text {
+        color: $general-text-color;
+        text-align: center;
+        margin: 15px 0;
+      }
+    }
+  }
+}
+
+// ------------------------Offers styles---------------------------
+
+.offers {
+  margin: $section-margin;
+
+  .title {
+    @include title-position($title-my, $title-mx);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    margin: auto 50px;
+
+    .card {
+      padding: 3rem;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+      .card-title {
+        margin: 30px auto;
+        color: $general-text-color;
+      }
+
+      .card-text {
+        color: $general-text-color;
+      }
+
+      .card-price {
+        color: $general-text-color;
+        margin: 40px auto;
+      }
+
+      .card-button {
+        @include btn(15px, 55px);
+      }
+    }
+  }
+}
+
+// -----------------------Discounts styles-------------------------
+
+.discounts {
+  position: relative;
+  margin: $section-margin;
+
+  #carouselExampleFade {
+    .carousel-inner {
+      .carousel-item {
+        background-image: url("../../img/discount/discount-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 550px;
+
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-caption.d-none.d-md-block {
+          z-index: 10;
+          top: 160px;
+
+          .caption-title {
+            color: $secondary-text-color;
+            text-align: center;
+            letter-spacing: 0.25em;
+            font-family: Montserrat, sans-serif;
+          }
+
+          .caption-subtitle {
+            color: #DF7901;
+            text-align: center;
+          }
+
+          .caption-discount {
+            color: $secondary-text-color;
+            text-align: center;
+            font-size: 48px;
+          }
+
+          .caption-button {
+            @include btn(15px, 70px);
+          }
+        }
+      }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      @include carousel-buttons(50%);
+    }
+
+    .carousel-control-prev {
+      left: 5%;
+
+      .carousel-control-prev-icon {
+        background: $carousel-control-prev-icon-bg;
+      }
+    }
+
+    .carousel-control-next {
+      right: 5%;
+
+      .carousel-control-next-icon {
+        background: $carousel-control-next-icon-bg;
+      }
+    }
+  }
+}
+
+// ---------------------Feedback-Slider styles---------------------
+
+.feedback-slider {
+  margin: $section-margin;
+
+  .title {
+    @include title-position($title-my, $title-mx);
+  }
+
+  #carouselExampleControls {
+    margin: 60px auto;
+
+    .carousel-inner {
+      .carousel-item {
+        .card {
+          position: relative;
+          display: grid;
+          grid-template-columns: 3fr 7fr;
+          grid-gap: 2rem;
+          padding: 15px;
+          height: 200px;
+
+          .username {
+            margin: auto;
+            color: $general-text-color;
+          }
+
+          .user-feedback {
+            margin: auto;
+            color: $general-text-color;
+
+            &:before {
+              content: '';
+              position: absolute;
+              bottom: 25px;
+              left: 28.5%;
+              height: 150px;
+              border: 1px solid lightcoral;
+              opacity: .7;
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: -25%;
+      width: 50px;
+      height: 50px;
+    }
+
+    .carousel-control-prev {
+      left: 75%;
+
+      .carousel-control-prev-icon {
+        background: $carousel-control-prev-icon-bg;
+      }
+    }
+
+    .carousel-control-next {
+      right: 5%;
+
+      .carousel-control-next-icon {
+        background: $carousel-control-next-icon-bg;
+      }
+    }
+  }
+
+  .feedback-button {
+    @include btn(15px, 30px, 14px);
+  }
+
+  .popup-form {
+    display: none;
+
+
+    .feedback-form {
+      @include popup-form(20%, 25%);
+
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        label {
+          width: 45%;
+
+          .feedback-input {
+            @include form-input();
+          }
+        }
+      }
+
+      label {
+        width: 100%;
+
+        .feedback-textarea {
+          display: block;
+          margin-bottom: 50px;
+          padding: 30px;
+          resize: none;
+          width: 100%;
+          height: 230px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+        }
+      }
+
+      #send-feedback {
+        @include btn(15px, 80px)
+      }
+    }
+
+    &:after {
+      content: '';
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import '../variables/variebles';
+@import "../mixins/mixins";
+
+section.contacts {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .contacts-wrapper {
+    @include section-block-wrapper();
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+
+    .contacts-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .contacts-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      color: white;
+      grid-gap: 2rem;
+
+      .contacts-info {
+        .contacts-block {
+          margin-bottom: 40px;
+
+          .contacts-title {
+            text-align: center;
+            color: $general-text-color;
+          }
+
+          .contact-item {
+            @include nav-link(18px);
+            color: $general-text-color;;
+
+            &:hover {
+              color: $general-text-color;
+            }
+          }
+        }
+
+        .schedule-block {
+          margin-bottom: 40px;
+
+          .schedule-title {
+            text-align: center;
+            color: $general-text-color;
+          }
+
+          .schedule-item {
+            text-align: center;
+            color: $general-text-color;
+
+          }
+        }
+      }
+    }
+  }
+}

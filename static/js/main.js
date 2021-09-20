@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     const showPopup = $('#show-popup');
     const hidePopup = $('#hide-popup');
     const galleryPopup = $('.gallery-popup')
@@ -35,28 +35,53 @@ $(function(){
         $('.gallery-popup').show()
     })
 
-    // $(window).resize(function () {
-    //     console.log('resize')
-    // })
+    $(window).click(function (e) {
+        const showFeedbackForm = $('#show-feedback-form')
+        const popupForm = $('.popup-form')
+        const feedbackForm = $('.feedback-form')
+        const booking = $('#booking')
+        const chooseServices = $('.booking-btn input')
+        const datepicker = $("#datepicker")
+        const checkbox = $('.choose-time input')
 
-    const showFeedbackForm = $('#show-feedback-form')
-    const popupForm = $('.popup-form')
-    const feedbackForm = $('.feedback-form')
 
-    popupForm.hide()
+        if (e.target === showFeedbackForm[0]) {
+             popupForm.show()
+        }
 
-    showFeedbackForm.click(function () {
-        popupForm.show()
+        if (e.target === popupForm[0]) {
+            popupForm.hide()
+        }
+
+        if (e.target === booking[0]) {
+             popupForm.show()
+            const date = document.querySelector('.popup-form input[name=data_field]')
+            const time = document.querySelector('.popup-form input[name=time_field]')
+            const service = document.querySelector('.popup-form input[name=service_field]')
+
+            console.log(service)
+
+            date.value = datepicker.val()
+
+            checkbox.each(function (index, value) {
+                console.log(1)
+                if(value.checked) {
+                    time.value = value.nextElementSibling.innerHTML
+                }
+            })
+
+            chooseServices.each(function (index, value) {
+
+                if(value.checked) {
+                    service.value = value.dataset.name
+                }
+            })
+
+        }
+
     })
 
-    popupForm.click(function () {
-        popupForm.hide()
 
-    })
 
-    feedbackForm.click(function (e) {
-        e.stopPropagation()
-        popupForm.show()
-    })
 });
 

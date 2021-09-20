@@ -1,0 +1,46 @@
+@import '../variables/variebles';
+@import "../mixins/mixins";
+
+section.services {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .services-wrapper {
+    @include section-block-wrapper();
+
+    .services-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .services-row {
+      display: grid;
+      grid-template-columns: 7fr 3fr;
+      height: 80%;
+      overflow: auto;
+
+      .service-column {
+        .column-name {
+          @include services-column(60%);
+        }
+
+        .item-name {
+          @include services-column(40%);
+        }
+
+        .column-price {
+          @include services-column(60%);
+          border-left: 1px solid lightgrey;
+        }
+
+        .item-price {
+          @include services-column(40%);
+          border-left: 1px solid lightgrey;
+        }
+      }
+    }
+  }
+}

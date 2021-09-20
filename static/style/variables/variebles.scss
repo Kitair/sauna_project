@@ -1,0 +1,35 @@
+$carousel-control-color: black;
+$carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$container-width: 1440px;
+
+$default-size: 18px;
+$font-size-xxl: 72px;
+$font-size-xl: 48px;
+$font-size-l: 36px;
+$font-size-m: 24px;
+
+$general-text-color: black;
+$secondary-text-color: white;
+
+$link-text-color: white;
+$link-text-color-hover: white;
+$link-text-font-size: 18px;
+
+$btn-text-color: white;
+$btn-bg-color: #F59F39;
+$btn-bg-color-hover: #DF7901;
+$btn-border-radius: 90px;
+$btn-border: none;
+
+$title-my: 50px;
+$title-mx: auto;
+$title-align: center;
+
+
+$section-margin: 100px auto;
+
+$popup-bg-color: #3b3b3b;
+
+$radio-btn-bg-color: forestgreen;

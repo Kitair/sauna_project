@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from sauna_project import settings
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('booking/', include('booking_calendar.urls')),

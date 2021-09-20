@@ -1,0 +1,254 @@
+section.booking {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.booking .booking-wrapper {
+  width: 70%;
+  padding: 175px 70px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  min-height: 900px;
+}
+section.booking .booking-wrapper .booking-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.booking .booking-wrapper .booking-btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+section.booking .booking-wrapper .booking-btn .choose-booking {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+section.booking .booking-wrapper .booking-btn .choose-booking input[type=radio] {
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+section.booking .booking-wrapper .booking-btn .choose-booking input[type=radio]:checked + span {
+  color: white;
+  opacity: 1;
+}
+section.booking .booking-wrapper .booking-btn .choose-booking span {
+  display: block;
+  padding: 15px 75px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+  background: #DF7901;
+  opacity: 0.5;
+}
+section.booking .booking-wrapper .booking-btn .choose-booking span:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+section.booking .booking-wrapper .booking-calendar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 0;
+}
+section.booking .booking-wrapper .booking-calendar .calendar-wrapper {
+  height: 310px;
+  margin: auto;
+}
+section.booking .booking-wrapper .booking-calendar .visit-time {
+  width: 60%;
+  margin: 0 auto;
+}
+section.booking .booking-wrapper .booking-calendar .visit-time .text {
+  text-align: center;
+  color: black;
+}
+section.booking .booking-wrapper .booking-calendar .timetable {
+  margin: 0;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time {
+  display: block;
+  width: 100px;
+  height: 30px;
+  margin: 0.3rem auto;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time:hover {
+  cursor: pointer;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time input[type=radio] {
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time span {
+  text-align: center;
+  display: block;
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  background: forestgreen;
+  color: white;
+  transition: background 0.2s ease;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time span:hover {
+  background: rgba(14, 149, 80, 0.76);
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time input[type=radio]:checked + span {
+  color: white;
+  background: #F59F39;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time input[type=radio]:disabled + span {
+  color: white;
+  background: crimson;
+}
+section.booking .booking-wrapper .booking-calendar .timetable .choose-time input[type=radio]:disabled + span:hover {
+  cursor: default;
+}
+section.booking .booking-wrapper .booking-description {
+  position: relative;
+}
+section.booking .booking-wrapper .booking-description .description-item {
+  padding: 10px 40px;
+  margin: 0;
+  position: relative;
+}
+section.booking .booking-wrapper .booking-description .description-item:nth-child(1):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+  background-color: #F59F39;
+  border-radius: 50%;
+}
+section.booking .booking-wrapper .booking-description .description-item:nth-child(2):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+  background-color: forestgreen;
+  border-radius: 50%;
+}
+section.booking .booking-wrapper .booking-description .description-item:nth-child(3):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+  background-color: crimson;
+  border-radius: 50%;
+}
+section.booking .booking-wrapper #booking {
+  display: block;
+  padding: 10px 35px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+section.booking .booking-wrapper #booking:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+section.booking .booking-wrapper .popup-form {
+  display: none;
+}
+section.booking .booking-wrapper .popup-form .booking-form {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  padding: 50px;
+  margin: auto;
+  width: 50%;
+  border-radius: 8px;
+  background: #3b3b3b;
+  z-index: 15;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-wrapper label {
+  width: 45%;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-wrapper label p {
+  color: white;
+  text-align: left;
+  margin: 0;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-wrapper label input {
+  margin: 1rem 0 2rem 0;
+  padding-left: 30px;
+  width: calc(100% - 30px);
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: content-box;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-read {
+  display: flex;
+  justify-content: space-between;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-read label {
+  width: 30%;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-read label p {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+section.booking .booking-wrapper .popup-form .booking-form .input-read label input {
+  margin: 1rem 0 2rem 0;
+  padding-left: 30px;
+  width: calc(100% - 30px);
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: content-box;
+  margin: 1rem 0 2rem 0;
+}
+section.booking .booking-wrapper .popup-form .booking-form #send-booking {
+  display: block;
+  padding: 15px 80px;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  background: #F59F39;
+  border: none;
+  border-radius: 90px;
+  transition: background-color 0.3s;
+}
+section.booking .booking-wrapper .popup-form .booking-form #send-booking:hover {
+  background: #DF7901;
+  cursor: pointer;
+}
+section.booking .booking-wrapper .popup-form:after {
+  content: "";
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+/*# sourceMappingURL=section-booking.css.map */

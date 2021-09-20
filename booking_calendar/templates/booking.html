@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <section class="booking">
         <div class="booking-wrapper">
@@ -8,11 +8,11 @@
             </h2>
             <div class="booking-btn">
                 <label class="choose-booking" id="choose-sauna">
-                    <input type="radio" name="choose-booking" checked/>
+                    <input type="radio" name="choose-booking" data-name="Сауна" checked/>
                     <span>Забронировать сауну </span>
                 </label>
                 <label class="choose-booking" id="choose-vat">
-                    <input type="radio" name="choose-booking"/>
+                    <input type="radio" name="choose-booking" data-name="Чан"/>
                     <span>Забронировать чан</span>
                 </label>
             </div>
@@ -20,7 +20,6 @@
                 <div class="calendar-wrapper">
                     <div id="datepicker">
                     </div>
-
                 </div>
                 <div class="visit-time">
                     <p class="text">
@@ -28,7 +27,7 @@
                     </p>
                     <div class="timetable">
                         <label class="choose-time">
-                            <input type="radio" name="choose-time" checked>
+                            <input type="radio" name="choose-time">
                             <span>9:00</span>
                         </label>
                         <label class="choose-time">
@@ -40,21 +39,52 @@
                             <span>15:00</span>
                         </label>
                         <label class="choose-time">
-                            <input type="radio" name="choose-time" disabled>
+                            <input type="radio" name="choose-time">
                             <span>18:00</span>
                         </label>
                         <label class="choose-time">
-                            <input type="radio" name="choose-time" disabled>
+                            <input type="radio" name="choose-time">
                             <span>21:00</span>
                         </label>
                     </div>
                 </div>
             </div>
             <div class="booking-description">
-                <p class="description-item">Есть места</p>
-                <p class="description-item">Мест нет</p>
+                <p class="description-item">Выбраная дата</p>
+                <p class="description-item">Время доступно</p>
+                <p class="description-item">Время занято</p>
             </div>
             <button id="booking">Забронировать</button>
+            <div class="popup-form" id="popup-booking">
+                <form class="booking-form" action="" method="POST" novalidate>
+                    {% csrf_token %}
+                    <div class="input-wrapper">
+                        <label>
+                            <p>Ваше имя:</p>
+                            {{ form_booking.user_name }}
+                        </label>
+                        <label>
+                            <p>Ваш номер телефона:</p>
+                            {{ form_booking.user_phone }}
+                        </label>
+                    </div>
+                    <div class="input-read">
+                        <label>
+                            <p>Дата:</p>
+                            {{ form_booking.data_field }}
+                        </label>
+                        <label>
+                            <p>Время:</p>
+                            {{ form_booking.time_field }}
+                        </label>
+                        <label>
+                            <p>Услуга:</p>
+                            {{ form_booking.service_field }}
+                        </label>
+                    </div>
+                    <input type="submit" id="send-booking" value="Заказать"/>
+                </form>
+            </div>
         </div>
     </section>
 {% endblock %}

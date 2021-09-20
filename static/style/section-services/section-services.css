@@ -1,0 +1,61 @@
+section.services {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+section.services .services-wrapper {
+  width: 70%;
+  padding: 175px 70px;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  min-height: 900px;
+}
+section.services .services-wrapper .services-title {
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+section.services .services-wrapper .services-row {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  height: 80%;
+  overflow: auto;
+}
+section.services .services-wrapper .services-row .service-column .column-name {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 60%;
+  color: black;
+}
+section.services .services-wrapper .services-row .service-column .item-name {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 40%;
+  color: black;
+}
+section.services .services-wrapper .services-row .service-column .column-price {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 60%;
+  color: black;
+  border-left: 1px solid lightgrey;
+}
+section.services .services-wrapper .services-row .service-column .item-price {
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-weight: 40%;
+  color: black;
+  border-left: 1px solid lightgrey;
+}
+
+/*# sourceMappingURL=section-services.css.map */

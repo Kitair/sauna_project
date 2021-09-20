@@ -1,33 +1,16 @@
 $(function () {
     const datepicker = $("#datepicker")
-    const booking = $("#booking")
-    const checkbox = $('.checkbox-btn input')
 
-    let a
     datepicker.datepicker({
         minDate: 0,
-        // onSelect: function (dateText, inst) {
-        //     return a = inst
-        // }
+        dateFormat: 'dd.mm.yy',
+        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+            'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+        dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+        dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+        dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
     });
 
-    datepicker.change(function () {
-        console.log(datepicker.val())
-    })
-
-    // let b
-    //
-    // let getCheckedCheckbox = () => {
-    //     for (let i = 0; i < checkbox.length; i++) {
-    //         if (checkbox[i].checked) {
-    //             b = checkbox[i].nextElementSibling.innerHTML
-    //         }
-    //     }
-    // }
-    //
-    // booking.click(function () {
-    //     getCheckedCheckbox()
-    //     a.time = b
-    //     console.log(a)
-    // })
 })

@@ -39,13 +39,11 @@
             <span class="visually-hidden">Следующий</span>
         </button>
     </div>
-    <button class="feedback-button" id="show-feedback-form">
-        Оставить отзыв
-    </button>
-    <div class="popup-form">
+    <button class="feedback-button" id="show-feedback-form">Оставить отзыв</button>
+    <div class="popup-form" id="popup-feedback">
         <form class="feedback-form" action="" method="POST">
             {% csrf_token %}
-            <div class="grid-box">
+            <div class="input-wrapper">
                 <label>
                     {{ form_feedback.user_name }}
                 </label>
@@ -56,7 +54,7 @@
             <label>
                 {{ form_feedback.user_message }}
             </label>
-            <input type="submit" id="send-feedback">Отправить</input>
+            <input type="submit" id="send-feedback" value="Отправить"/>
         </form>
     </div>
 </div>

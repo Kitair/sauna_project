@@ -1,0 +1,202 @@
+@import '../variables/variebles';
+@import "../mixins/mixins";
+
+section.booking {
+  background-image: url("../../img/page-background.png");
+  background-size: cover;
+  padding: 50px 0;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  .booking-wrapper {
+    @include section-block-wrapper();
+
+    .booking-title {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+
+    .booking-btn {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .choose-booking {
+        width: 85%;
+        margin: auto;
+        text-align: center;
+      }
+
+      .choose-booking input[type=radio] {
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+      }
+
+      .choose-booking input[type=radio]:checked + span {
+        color: white;
+        opacity: 1;
+      }
+
+      .choose-booking span {
+        @include btn(15px, 75px);
+        background: #DF7901;
+        opacity: .5;
+      }
+    }
+
+    .booking-calendar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 3rem 0;
+
+      .calendar-wrapper {
+        height: 310px;
+        margin: auto;
+      }
+
+      .visit-time {
+        width: 60%;
+        margin: 0 auto;
+
+        .text {
+          text-align: center;
+          color: $general-text-color;
+        }
+      }
+
+      .timetable {
+        margin: 0;
+
+        .choose-time {
+          display: block;
+          width: 100px;
+          height: 30px;
+          margin: .3rem auto;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .choose-time input[type=radio] {
+          z-index: -1;
+          opacity: 0;
+          display: block;
+          width: 0;
+          height: 0;
+        }
+
+        .choose-time span {
+          @include radio-btn();
+        }
+
+        .choose-time input[type=radio]:checked + span {
+          color: white;
+          background: #F59F39;
+        }
+
+        .choose-time input[type=radio]:disabled + span {
+          color: white;
+          background: crimson;
+
+          &:hover {
+            cursor: default;
+          }
+        }
+      }
+    }
+
+    .booking-description {
+      position: relative;
+
+      .description-item {
+        padding: 10px 40px;
+        margin: 0;
+        position: relative;
+
+        &:nth-child(1) {
+          @include color-designation(#F59F39);
+        }
+
+        &:nth-child(2) {
+          @include color-designation(forestgreen);
+        }
+
+        &:nth-child(3) {
+          @include color-designation(crimson);
+        }
+
+      }
+    }
+
+    #booking {
+      @include btn(10px, 35px)
+    }
+
+    .popup-form {
+      display: none;
+
+
+      .booking-form {
+        @include popup-form(25%, 25%);
+
+        .input-wrapper {
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            width: 45%;
+
+            p {
+              color: white;
+              text-align: left;
+              margin: 0;
+            }
+
+            input {
+              @include form-input();
+            }
+          }
+        }
+
+        .input-read {
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            width: 30%;
+
+            p {
+              color: white;
+              text-align: center;
+              margin: 0;
+            }
+
+            input {
+              @include form-input();
+              margin: 1rem 0 2rem 0;
+            }
+          }
+        }
+
+
+        #send-booking {
+          @include btn(15px, 80px)
+        }
+      }
+
+      &:after {
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(8px);
+        z-index: 10;
+      }
+    }
+  }
+}

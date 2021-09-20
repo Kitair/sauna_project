@@ -1,7 +1,6 @@
 from django.db import models
 from uuid import uuid4
 from os import path
-from django.core.validators import RegexValidator
 
 
 class Slider(models.Model):

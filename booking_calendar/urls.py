@@ -1,6 +1,8 @@
-from django.urls import path, include
-from .views import *
+from django.urls import path
+from .views import  CheckBookingDate, bookingview
+
 
 urlpatterns = [
-    path('', main_views),
+    path('', bookingview),
+    path('check_booking_date/', CheckBookingDate.as_view(), name='check_booking_date')
 ]
